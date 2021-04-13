@@ -25,7 +25,7 @@ plugins:
       material_alternate: false
 
 extra:
-  generator: false
+  # generator: false
   alternate:
     - name: Russian
       link: ./ru/
