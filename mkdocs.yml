@@ -36,8 +36,8 @@ extra:
     
 nav:
 - index.ru.md
-# - amoCRM:
-  # - Asterisk + FreePBX: amoCRM/asterisk.ru.md
+- amoCRM:
+  - Asterisk + FreePBX: amoCRM/asterisk.ru.md
   # - Yeastar PBX System: amoCRM/yeastar.ru.md
 - Bitrix24:
   # - Asterisk + FreePBX: Bitrix24/asterisk.ru.md
