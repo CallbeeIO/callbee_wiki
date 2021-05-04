@@ -6,6 +6,8 @@
 
 [amoCRM с Asterisk + FreePBX](amoCRM/asterisk)
 
+[amoCRM с Yeastar S-Series (S20/S50/S100/S300)](amoCRM/yeastar)
+
 ## Список IP адресов сервиса
 
 Список IP адресов может обновляться и дополняться
