@@ -6,6 +6,20 @@ copyright: Copyright &copy; 2021 <a href="https://callbee.io">Callbee</a>
 theme:
   name: material
   language: ru
+  theme:
+  palette:
+    - scheme: default
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 markdown_extensions:
   - admonition
