@@ -3,10 +3,15 @@ site_url: https://callbee.io
 site_description: Callbee Wiki
 copyright: Copyright &copy; 2021 <a href="https://callbee.io">Callbee</a>
 
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
   language: ru
   theme:
+  logo: img/logo.png
+  favicon: img/favicon.png
   palette:
     - scheme: default
       primary: amber

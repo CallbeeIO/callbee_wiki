@@ -1,0 +1,10 @@
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+    display: block;
+    width: 4.5rem;
+    height: 1rem;
+    fill: currentColor;
+}
+
+.md-header__title {
+    line-height: 2.6rem;
+}
