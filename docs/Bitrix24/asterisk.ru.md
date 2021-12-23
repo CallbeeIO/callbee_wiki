@@ -106,6 +106,7 @@ touch /var/www/html/.htaccess && echo "Options -Indexes" > /var/www/html/.htacce
     ``` sh
     asterisk -rx "manager reload"
     ```
+
 * __Способ 2__ через интерфейс __FreePBX__:
 
     * Должен быть установлен модуль __Asterisk API__
@@ -127,7 +128,7 @@ __добавить доступ__ в пункт __«Permit»__, указав __I
 ![settings-b24-asterisk-1](../img/asterisk/asterisk_b24_15.png)
 * Вкладка __«General»__
 ![settings-b24-asterisk-1](../img/asterisk/asterisk_b24_16.png)
-* Вкладка __«Advanced»__, на параметре __«Pause Before Answer»__ устанавливем занчение равным __"2"__
+* Вкладка __«Advanced»__, на параметре __«Pause Before Answer»__ устанавливаем значение равным __"2"__
 ![settings-b24-asterisk-1](../img/asterisk/asterisk_b24_17.png)
 
 !!!Info
