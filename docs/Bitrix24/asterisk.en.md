@@ -24,7 +24,7 @@ The integration is carried out by connecting the __Callbee__ cloud service to th
 
 In order for the __Callbee__ service to connect to your __PBX__, you should have a "__whitelisted__" __static IP address__ or a domain name with an __A__ record indicating __your IP address__, and the following two ports should be forwarded to the __PBX__ using __NAT__:
 
-* __an external port__ (e.g. 50380) forwarded to __TCP port 5038__ - to access the PBX via AMI (Security warning! We recommend opening the port by allowing connection from the IP addresses specified in the [list](/en/#ip))
+* __an external port__ (e.g. 50380) forwarded to __TCP port 5038__ - to access the PBX via AMI (Security warning! We recommend opening the port by allowing connection from the IP addresses specified in the [list](/en/#service-ip-address-list))
 * __an external port__ (e.g. 50381) forwarded to __TCP port 80__ (the standard port of the PBX web server) – for downloading call records
 
 ## Settings for Call Recording
