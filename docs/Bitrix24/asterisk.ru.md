@@ -96,7 +96,7 @@ touch /var/www/html/.htaccess && echo "Options -Indexes" > /var/www/html/.htacce
     * Интеграция __не гарантирует__ корректную работу функций при использовании модуля FreePBX __Ring Groups__ для настройки распределения входящих вызовов в АТС. Для корректной работы всех функций интеграции рекомендуем вместо __Ring Groups__ использовать __Queues__
 
 
-####  Настройка AMI Asterisk
+#### Настройка AMI Asterisk
 
 Для подключения к __AMI Asterisk__ нужно создать __AMI пользователя__ на стороне __Asterisk.__ Это можно сделать __двумя__ способами:
 
@@ -211,8 +211,8 @@ __добавить доступ__ в пункт __«Permit»__, указав __I
 ![settings-b24-asterisk-1](../img/asterisk/asterisk_b24_30.png)
     * __Asterisk AMI Host (1)__ - Указываем __внешний ip-адрес__ AMI интерфейса, или его доменное имя
     * __Asterisk AMI Port (2)__ - Указываем __внешний порт__ AMI интерфейса
-    * __Asterisk AMI Username (3)__ - Указываем __AMI Username__ (Смотрите раздел __Настройка AMI Asterisk__)
-    * __Asterisk AMI Secret (4)__ - Указываем __AMI Secret__ (Смотрите раздел __Настройка AMI Asterisk__)
+    * __Asterisk AMI Username (3)__ - Указываем __AMI Username__ (Смотрите раздел [Настройка AMI Asterisk](#настройка-ami-asterisk))
+    * __Asterisk AMI Secret (4)__ - Указываем __AMI Secret__ (Смотрите раздел [Настройка AMI Asterisk](#настройка-ami-asterisk))
 
 #### Настройка интеграции на стороне сервиса Callbee для каждой линии АТС в отдельности (доступно в pro-версии и demo-режиме)
 

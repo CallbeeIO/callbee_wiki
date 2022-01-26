@@ -24,7 +24,7 @@ The integration is carried out by connecting the __Callbee__ cloud service to th
 
 In order for the __Callbee__ service to connect to your __PBX__, you should have a "__whitelisted__" __static IP address__ or a domain name with an __A__ record indicating __your IP address__, and the following two ports should be forwarded to the __PBX__ using __NAT__:
 
-* __an external port__ (e.g. 50380) forwarded to __TCP port 5038__ - to access the PBX via AMI (Security warning! We recommend opening the port by allowing connection from the IP addresses specified in the [list](/#ip))
+* __an external port__ (e.g. 50380) forwarded to __TCP port 5038__ - to access the PBX via AMI (Security warning! We recommend opening the port by allowing connection from the IP addresses specified in the [list](/en/#ip))
 * __an external port__ (e.g. 50381) forwarded to __TCP port 80__ (the standard port of the PBX web server) – for downloading call records
 
 ## Settings for Call Recording
@@ -196,8 +196,8 @@ After performing __all the configuration__ as described above, you need to __ena
     * __Bitrix24 Domain (1)__ -  Enter the __domain name__ of your Bitrix24 __(without https://)__
     * __Asterisk AMI Host (2)__ - Enter the __external IP address__ of the AMI interface or its domain name
     * __Asterisk AMI Port (3)__ - Enter the __external port__ of the AMI interface
-    * __Asterisk AMI Username (4)__ - Enter the __AMI Username__ (See [AMI Asterisk Configuration](#ami-asterisk-configuration)) 
-    * __Asterisk AMI Secret (5)__ - Enter the __AMI Secret__ (See [AMI Asterisk Configuration](#ami-asterisk-configuration))
+    * __Asterisk AMI Username (4)__ - Enter the __AMI Username__ (See [AMI Asterisk Configuration](#asterisk-ami-configuration)) 
+    * __Asterisk AMI Secret (5)__ - Enter the __AMI Secret__ (See [AMI Asterisk Configuration](#asterisk-ami-configuration)) 
 
 #### Enabling the Integration on Callbee Side Using an Installer
 
@@ -210,8 +210,8 @@ After performing __all the configuration__ as described above, you need to __ena
 ![settings-b24-asterisk-1](../img/asterisk/asterisk_b24_30.png)
     * __Asterisk AMI Host (1)__ - Enter the __external IP address__ of the AMI interface or its domain name
     * __Asterisk AMI Port (2)__ - Enter the __external port__ of the AMI interface
-    * __Asterisk AMI Username (3)__ - Enter the __AMI Username(See __AMI Asterisk Configuration__)
-    * __Asterisk AMI Secret (4)__ - Enter the __AMI Secret__ (See __AMI Asterisk Configuration__)
+    * __Asterisk AMI Username (3)__ - Enter the __AMI Username__ (See [AMI Asterisk Configuration]((#asterisk-ami-configuration))
+    * __Asterisk AMI Secret (4)__ - Enter the __AMI Secret__ (See [AMI Asterisk Configuration]((#asterisk-ami-configuration))
 
 #### Configuring the Integration on Callbee Side for Each Separate PBX Line (Available in Pro Version and Demo Mode)
 

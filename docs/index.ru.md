@@ -14,11 +14,11 @@
 
 [Bitrix24 and Asterisk + FreePBX](/en/Bitrix24/asterisk)
 
-[Bitrix24 and Yeastar S-Series (S20/S50/S100/S300)](/en/Bitrix24/yeastar)
+[Bitrix24 and Yeastar S-Series (S20/S50/S100/S300)](/en/Bitrix24/yeastar) (В разработке)
 
-[amoCRM and Asterisk + FreePBX](/en/amoCRM/asterisk)
+[amoCRM and Asterisk + FreePBX](/en/amoCRM/asterisk) (В разработке)
 
-[amoCRM and Yeastar S-Series (S20/S50/S100/S300)](/en/amoCRM/yeastar)
+[amoCRM and Yeastar S-Series (S20/S50/S100/S300)](/en/amoCRM/yeastar) (В разработке)
 
 ## Список IP адресов сервиса
 
