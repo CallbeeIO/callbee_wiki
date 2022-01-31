@@ -167,6 +167,13 @@ After performing all the configuration as described above, you need to enable th
         * __API port (10)__ - your __port__ used to connect to the Yeastar API
         * __API username (11)__ - the __username__ used to log in to the Yeastar API
         * __API secret (12)__ - the __password__ used to log in to the Yeastar API
+
+    !!! warning "Important warning"    
+        * When __transferring an unprompted (blind) call__, only __the second part__ of the conversation (with __the second__ speaker) will be recorded, consequently, __the first part__ of the conversation (with __the first__ speaker) __will not__ be saved, even if the recording of the entire line __is enabled__.
+        * When __transferring a prompted call__, the entire conversation will be __duly recorded__ (line recording needs to be enabled) and __forwarded__ to __the last speaker__ in the CRM system (starting from the integration version v2.0).
+
+        This warning is pertinent to the operational features of Yeastar PBXs
+        
         
 ### 4.4 Configuring the Integration on Callbee Side for Each Separate PBX Line (Available in Pro Version and Demo Mode)
 
