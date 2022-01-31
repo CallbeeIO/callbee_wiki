@@ -14,7 +14,7 @@
 
 [Bitrix24 and Asterisk + FreePBX](/en/Bitrix24/asterisk)
 
-[Bitrix24 and Yeastar S-Series (S20/S50/S100/S300)](/en/Bitrix24/yeastar) (В разработке)
+[Bitrix24 and Yeastar S-Series (S20/S50/S100/S300)](/en/Bitrix24/yeastar)
 
 [amoCRM and Asterisk + FreePBX](/en/amoCRM/asterisk) (В разработке)
 

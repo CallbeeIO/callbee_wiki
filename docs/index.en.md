@@ -4,7 +4,7 @@
 
 [Bitrix24 and Asterisk + FreePBX](Bitrix24/asterisk)
 
-[Bitrix24 and Yeastar S-Series (S20/S50/S100/S300)](Bitrix24/yeastar) (Coming soon)
+[Bitrix24 and Yeastar S-Series (S20/S50/S100/S300)](Bitrix24/yeastar)
 
 [amoCRM and Asterisk + FreePBX](amoCRM/asterisk) (Coming soon)
 
