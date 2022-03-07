@@ -24,6 +24,6 @@
 
 Service IP address list can be updated and supplemented
 
-* 89.108.65.246
-* 31.24.92.54
-* 46.101.225.17
+* 89.108.65.246 (Russian Federation)
+* 31.24.92.54   (Belarus)
+* 46.101.225.17 (Germany)

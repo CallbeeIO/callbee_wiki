@@ -123,6 +123,7 @@ After performing all the configuration as described above, you need to enable th
     !!!Info
         *This feature enables __the fastest connection between Yeastar__ and __CallBee__*    
         *You can select one of the __three available regions__:*
+        
         ![install integration](../img/yeastar/yeastar_b24_5.png)
         
         * __Russia__ - connecting to an integration node located in the Russian Federation
