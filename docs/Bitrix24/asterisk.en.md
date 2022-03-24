@@ -10,8 +10,8 @@
 
 __Asterisk + FreePBX,__ hereinafter referred to as __PBX__
 
-* __Asterisk__ version __13 or higher.\*.\*__
-* __FreePBX__ version __13 or higher.\*.\*__
+* __Asterisk__ version __13.\*.\* or higher__
+* __FreePBX__ version __13.\*.\* or higher__
 * __Static IP address__ (must be purchased from your Internet service provider) to access the PBX directly via the Internet
 
 The integration is carried out by connecting the __Callbee__ cloud service to the PBX using the __Asterisk Managment Interface (AMI)__ via the __TCP protocol.__ __AMI__ accepts connections on a __network port__ (by default,__TCP port 5038__)

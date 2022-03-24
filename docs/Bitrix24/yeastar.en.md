@@ -42,7 +42,7 @@ Open the admin panel of the PBX and go to Settings - System – Security, then g
 
 * Check the box next to __Enable AMI__
 * Change the default __Username__ and __Password__ (you will need to enter this username and password in your Callbee account)
-* In the Allowed IP Addresses/Subnet Masks field that appears, enter the IP address 89.108.65.246 and the subnet mask 255.255.255.255
+* In the Allowed IP Addresses/Subnet Masks field that appears, enter the IP addresses: 89.108.65.246, 31.24.92.54, 46.101.225.17 and the subnet mask 255.255.255.255
 
 ![settings-yeastar](../img/yeastar/yeastar-1-eng.png)
 
