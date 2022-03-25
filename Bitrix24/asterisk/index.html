@@ -1,0 +1,1073 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Callbee Wiki">
+      
+      
+      
+        <link rel="canonical" href="https://callbee.io/Bitrix24/asterisk/">
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.7">
+    
+    
+      
+        <title>Asterisk + FreePBX - Callbee Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9d5733d3.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#asterisk-freepbx-c-crm-24-callbee" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Callbee Wiki" class="md-header__button md-logo" aria-label="Callbee Wiki" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Callbee Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Asterisk + FreePBX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Выберите язык">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../ru/" hreflang="ru" class="md-select__link">
+                    Russian
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../en/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Очистить" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Callbee Wiki" class="md-nav__button md-logo" aria-label="Callbee Wiki" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Callbee Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Добро пожаловать на Callbee Wiki
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          amoCRM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="amoCRM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          amoCRM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../amoCRM/asterisk/" class="md-nav__link">
+        Asterisk + FreePBX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../amoCRM/yeastar/" class="md-nav__link">
+        Yeastar PBX System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Bitrix24
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bitrix24" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Bitrix24
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Asterisk + FreePBX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Asterisk + FreePBX
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Необходимые требования:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сетевые настройки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Настройка записи разговоров
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbee-24" class="md-nav__link">
+    Установка и настройка приложения Callbee в Битрикс24
+  </a>
+  
+    <nav class="md-nav" aria-label="Установка и настройка приложения Callbee в Битрикс24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    Добавление внутренних телефонов у сотрудников в Битрикс24
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asterisk-freepbx" class="md-nav__link">
+    Настройка Asterisk + FreePBX
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка Asterisk + FreePBX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ami-asterisk" class="md-nav__link">
+    Настройка AMI Asterisk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inbound-routes-freepbx" class="md-nav__link">
+    Настройка «Входящей маршрутизации (Inbound Routes)» в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outbound-routes-freepbx" class="md-nav__link">
+    Настройка «Исходящей маршрутизации (Outbound Routes)» в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-freepbx" class="md-nav__link">
+    Настройка «Внутренних номеров(Extensions)» в FreePBX
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbee" class="md-nav__link">
+    Подключение интеграции на стороне сервиса Callbee
+  </a>
+  
+    <nav class="md-nav" aria-label="Подключение интеграции на стороне сервиса Callbee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callbee_1" class="md-nav__link">
+    Подключение интеграции на стороне сервиса Callbee вручную
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbee_2" class="md-nav__link">
+    Подключение интеграции на стороне сервиса Callbee через установщик
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbee-pro-demo-" class="md-nav__link">
+    Настройка интеграции на стороне сервиса Callbee для каждой линии АТС в отдельности (доступно в pro-версии и demo-режиме)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbee_3" class="md-nav__link">
+    Настройка интеграции на стороне сервиса Callbee для каждого внутреннего номера.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24_1" class="md-nav__link">
+    Настройка в Битрикс24.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yeastar/" class="md-nav__link">
+        Yeastar PBX System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Необходимые требования:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сетевые настройки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Настройка записи разговоров
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbee-24" class="md-nav__link">
+    Установка и настройка приложения Callbee в Битрикс24
+  </a>
+  
+    <nav class="md-nav" aria-label="Установка и настройка приложения Callbee в Битрикс24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    Добавление внутренних телефонов у сотрудников в Битрикс24
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asterisk-freepbx" class="md-nav__link">
+    Настройка Asterisk + FreePBX
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка Asterisk + FreePBX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ami-asterisk" class="md-nav__link">
+    Настройка AMI Asterisk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inbound-routes-freepbx" class="md-nav__link">
+    Настройка «Входящей маршрутизации (Inbound Routes)» в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outbound-routes-freepbx" class="md-nav__link">
+    Настройка «Исходящей маршрутизации (Outbound Routes)» в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-freepbx" class="md-nav__link">
+    Настройка «Внутренних номеров(Extensions)» в FreePBX
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbee" class="md-nav__link">
+    Подключение интеграции на стороне сервиса Callbee
+  </a>
+  
+    <nav class="md-nav" aria-label="Подключение интеграции на стороне сервиса Callbee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callbee_1" class="md-nav__link">
+    Подключение интеграции на стороне сервиса Callbee вручную
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbee_2" class="md-nav__link">
+    Подключение интеграции на стороне сервиса Callbee через установщик
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbee-pro-demo-" class="md-nav__link">
+    Настройка интеграции на стороне сервиса Callbee для каждой линии АТС в отдельности (доступно в pro-версии и demo-режиме)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbee_3" class="md-nav__link">
+    Настройка интеграции на стороне сервиса Callbee для каждого внутреннего номера.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24_1" class="md-nav__link">
+    Настройка в Битрикс24.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="asterisk-freepbx-c-crm-24-callbee">Настройка интеграции Asterisk + FreePBX c CRM Битрикс24 при помощи сервиса Callbee</h1>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p><em>Для подключения интеграции необходимо <strong>поочередно выполнить</strong> пункты данного руководства <strong>в той последовательности, как они описаны.</strong></em></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p><em><strong>Визуальное размещение</strong> некоторых элементов в настройках интеграции <strong>может изменяться</strong> в зависимости от доработок</em></p>
+</div>
+<h2 id="_1">Необходимые требования:</h2>
+<p><strong>Asterisk + FreePBX</strong> далее <strong>АТС</strong></p>
+<ul>
+<li><strong>Asterisk</strong> версия <strong>13.*.*</strong> или выше</li>
+<li><strong>FreePBX</strong> версия <strong>13.*.*</strong> или выше</li>
+<li><strong>Статический IP адрес</strong> (необходимо приобрести у вашего интернет-провайдера) для прямого доступа к АТС из сети Интернет</li>
+</ul>
+<p>Интеграция осуществляется при помощи подключения облачного сервиса <strong>Callbee</strong> к АТС при помощи <strong>Asterisk Managment Interface (AMI)</strong> посредством <strong>TCP протокола.</strong> <strong>AMI</strong> принимает <strong>подключения</strong>, устанавливаемые на <strong>сетевой порт</strong> (по умолчанию - <strong>TCP порт 5038</strong>)</p>
+<h2 id="_2">Сетевые настройки</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Интерфейс настройки проброса портов отличается в зависимости от используемого в вашей сети маршрутизатора. Актуальную инструкцию по пробросу портов под ваш маршрутизатор вы можете найти в интернете.</em></p>
+</div>
+<p>Для того чтобы сервис <strong>Callbee</strong> мог подключится к вашей <strong>АТС</strong>, у вас обязательно должен быть "<strong>белый</strong>" <strong>статический IP адрес</strong> либо доменное имя с <strong>A</strong>-записью на <strong>ваш IP адрес</strong>, и проброшены через <strong>NAT</strong> к <strong>АТС</strong> следующие два порта:</p>
+<ul>
+<li><strong>внешний порт</strong> (например 50380) на порт <strong>5038 TCP</strong> - для доступа к АТС по AMI (Замечание по  безопасности!  Рекомендуем открывать порт разрешив подключение с IP адресов указанных в <a href="/#ip">списке</a>)</li>
+<li><strong>внешний порт</strong> (например 50381) на порт <strong>80 TCP</strong> (стандартный порт веб - сервера АТС) - для выгрузки записей разговоров</li>
+</ul>
+<h2 id="_3">Настройка записи разговоров</h2>
+<p>Для того чтобы запись разговоров была доступна для скачивания, необходимо на <strong>сервере
+телефонии</strong> выполнить <strong>две команды</strong> подключившись по <strong>SSH</strong>:</p>
+<p><div class="highlight"><pre><span></span><code>ln -s /var/spool/asterisk/monitor/ /var/www/html/monitor
+</code></pre></div>
+Выполение команды выше создаст <strong>символьную ссылку</strong> на каталог с <strong>записями разговоров.</strong> Каталог с записями станет доступен по адресу <strong>http://адрес_сервера/monitor</strong></p>
+<p><img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_46.png" />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_45.png" /></p>
+<p><div class="highlight"><pre><span></span><code>touch /var/www/html/.htaccess <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Options -Indexes&quot;</span> &gt; /var/www/html/.htaccess
+</code></pre></div>
+Выполнение команды выше (выполняется в <strong>целях безопасности</strong>) <strong>скроет доступ</strong> к <strong>каталогу с записями</strong> разговоров по адресу <strong>http://адрес_сервера/monitor</strong> </p>
+<p><img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_47.png" /><br />
+но <strong>прямой доступ</strong> к записям для интегарции <strong>останется</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_48.png" /></p>
+<h2 id="callbee-24">Установка и настройка приложения Callbee в Битрикс24</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Для настройки интеграции вам необходимо иметь: Облачный или коробочный Битрикс24 любой редакции.</em></p>
+</div>
+<ul>
+<li>Войдите в свой корпоративный портал Битрикс24 <strong>пользователем с правами администратора</strong>.</li>
+<li>В <strong>меню</strong> Битрикс24 перейдите на страницу <strong>«Приложения»</strong>:</li>
+</ul>
+<p><img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_1.png" /></p>
+<ul>
+<li>В строке поиска <strong>«Категория»</strong> выберете <strong>«Интеграция с телефонией»</strong> или <strong>«IP- телефония»</strong></li>
+</ul>
+<p><img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_2.png" />
+  <img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_3.png" /></p>
+<ul>
+<li>Перейдите на страницу приложения <strong>«Callbee»</strong> и нажмите кнопку <strong>«Установить»</strong>:
+  <img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_4.png" /></li>
+</ul>
+<h4 id="24">Добавление внутренних телефонов у сотрудников в Битрикс24</h4>
+<ul>
+<li>Перейдите на <strong>страницу Сотрудники (1)</strong></li>
+<li>Откройте <strong>профиль Сотрудника (2)</strong>
+  <img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_5.png" /></li>
+<li>Внесите <strong>внутренний номер</strong> телефона <strong>сотрудника (3)</strong>
+  <img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_6.png" /></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p><em><strong>Дальнейшую настройку</strong> Битрикс24 необходимо производить <strong>после</strong> настройки Asterisk + FreePBX</em></p>
+</div>
+<h2 id="asterisk-freepbx">Настройка Asterisk + FreePBX</h2>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<ul>
+<li><strong>Внутренние номера (Extensions)</strong> могут быть <strong>трехзначными</strong> или <strong>четырехзначными</strong> (<strong>222</strong> или <strong>2222</strong>).</li>
+<li><strong>На всех входящих маршрутах (Inbound Routes)</strong> ожидаемый <strong>входящий номер DID</strong> должен быть <strong>не менее 5 цифр</strong>, это может быть номер линии в <strong>международном формате</strong> (например: <strong>+375291111111</strong>).</li>
+<li><strong>На всех входящих (Inbound Routes)</strong> и <strong>исходящих маршрутах (Outbound Routes)</strong> <strong>обязательно</strong> должны быть <strong>включены</strong> записи разговоров.</li>
+<li>Сервис <strong>Callbee не изменяет</strong> входящий номер телефона. Входящий номер телефона будет проброшен в Битрикс24 <strong>том виде в каком он поступил на АТС.</strong>(Рекомендуется средствами АТС приводить все входящие номера телефонов к <strong>единому международному формату</strong>). </li>
+<li>При звонке по клику из Битрикс24 на АТС поступает номер телефона в <strong>международном формате.</strong></li>
+<li>Для корректной работы интеграции мы рекомендуем настройки на АТС, которые не указаны в данной инструкции, <strong>оставить по умолчанию.</strong> </li>
+<li>Если входящий вызов <strong>не попадает</strong> на АТС или исходящий вызов уходит в линию, то никакие сущности в Битрикс24 создаваться <strong>не будут.</strong></li>
+<li>Интеграция <strong>не гарантирует</strong> корректную работу функций при использовании модуля FreePBX <strong>Ring Groups</strong> для настройки распределения входящих вызовов в АТС. Для корректной работы всех функций интеграции рекомендуем вместо <strong>Ring Groups</strong> использовать <strong>Queues</strong></li>
+</ul>
+</div>
+<h4 id="ami-asterisk">Настройка AMI Asterisk</h4>
+<p>Для подключения к <strong>AMI Asterisk</strong> нужно создать <strong>AMI пользователя</strong> на стороне <strong>Asterisk.</strong> Это можно сделать <strong>двумя</strong> способами:</p>
+<ul>
+<li>
+<p><strong>Способ 1</strong> через <strong>CLI</strong>:</p>
+<p>В файле <strong>/etc/asterisk/manager_custom.conf</strong> добавить (например):</p>
+<div class="highlight"><pre><span></span><code>[callbee] 
+secret=password                       # Вместо password указываем свой пароль
+deny=0.0.0.0/0.0.0.0 
+permit=127.0.0.1/255.255.255.0
+permit=89.108.65.246/255.255.255.255
+permit=31.24.92.54/255.255.255.255
+permit=46.101.225.17/255.255.255.255
+read=system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,message
+write=system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,message
+writetimeout = 500
+</code></pre></div>
+<p>После чего <strong>выполнить</strong> команду
+<div class="highlight"><pre><span></span><code>asterisk -rx <span class="s2">&quot;manager reload&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Способ 2</strong> через интерфейс <strong>FreePBX</strong>:</p>
+<ul>
+<li>Должен быть установлен модуль <strong>Asterisk API</strong></li>
+<li>Выберете пункт меню <strong>«Settings»(1)</strong>  -&gt; <strong>«Asterisk Manager Users»(2)</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_12.png" /></li>
+<li>Нажмите <strong>«Add Manager»</strong></li>
+<li>Во вкладке <strong>«General»</strong> указать <strong>имя</strong> учетной записи, задать <strong>криптостойкий пароль</strong> и
+<strong>добавить доступ</strong> в пункт <strong>«Permit»</strong>, указав <strong>IP адреса</strong> серверов <strong>Callbee 89.108.65.246, 31.24.92.54, 46.101.225.17</strong> к <strong>AMI-интерфейсу</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_13.png" /></li>
+<li>Во вкладке <strong>«Permissions»</strong> установить все переключатели в положение <strong>«Yes»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_14.png" /></li>
+</ul>
+</li>
+</ul>
+<h4 id="inbound-routes-freepbx">Настройка «Входящей маршрутизации (Inbound Routes)» в FreePBX</h4>
+<p>Пример стандартной настройки:</p>
+<ul>
+<li>Перейдите <strong>«Connectivity» -&gt; «Inbound Routes»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_15.png" /></li>
+<li>Вкладка <strong>«General»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_16.png" /></li>
+<li>Вкладка <strong>«Advanced»</strong>, на параметре <strong>«Pause Before Answer»</strong> устанавливаем значение равным <strong>"2"</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_17.png" /></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Для работы умной маршрутизации необходимо <strong>успеть получить ответ от CRM</strong> на запрос наличия существующего контакта с определившимся номером телефона. Для этого <strong>необходимо</strong> выставлять задержку на маршрутах <strong>«Pause Before Answer»</strong> (например 2 сек)</em></p>
+</div>
+<ul>
+<li>Вкладка <strong>«Other»</strong>, значение параметра <strong>«Call Recording»</strong> устанавливаем <strong>«Yes»</strong> 
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_18.png" /></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Данная настройка выполняется для <strong>получения записей разговоров в CRM</strong></em></p>
+</div>
+<h4 id="outbound-routes-freepbx">Настройка «Исходящей маршрутизации (Outbound Routes)» в FreePBX</h4>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p><em>Поле <strong>Route CID</strong> должно быть пустым</em></p>
+</div>
+<p>Пример стандартной настройки:</p>
+<ul>
+<li>Перейдите <strong>«Connectivity» -&gt; «Outbound Routes»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_23.png" /></li>
+<li>Вкладка <strong>«Route Settings»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_21.png" /></li>
+<li>Вкладка <strong>«Additional Settings»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_22.png" /></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Данная настройка выполняется для <strong>получения записей разговоров в CRM</strong></em></p>
+</div>
+<h4 id="extensions-freepbx">Настройка «Внутренних номеров(Extensions)» в FreePBX</h4>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<ul>
+<li><strong>Внутренние номера («Extensions»)</strong> должны быть <strong>трех-</strong> или <strong>четырехзначные</strong> (<strong>208</strong> или <strong>2080</strong>)</li>
+<li><strong>«Outbound CID»</strong> оставить <strong>по умолчанию</strong></li>
+<li><strong>Внутренние номера</strong> необходимо настраивать с использованием драйвера <strong>CHAN_SIP</strong> или <strong>PJ_SIP</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_19.png" /></li>
+<li>Настройку <strong>записей разговоров</strong> оставить <strong>по умолчанию</strong> (записи записываются <strong>на маршрутах</strong>)
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_20.png" /></li>
+</ul>
+</div>
+<h2 id="callbee">Подключение интеграции на стороне сервиса Callbee</h2>
+<p>После проведения <strong>всех настроек</strong> описанных выше необходимо произвести <strong>подключение</strong> сервиса.</p>
+<h4 id="callbee_1">Подключение интеграции на стороне сервиса Callbee вручную</h4>
+<ul>
+<li>Нажмите кнопку <strong>BITRIX24 WITH ASTERISK «Install»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_25.png" /></li>
+<li>Заполните <strong>все необходимые</strong> пункты для интеграции
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_26.png" /><ul>
+<li><strong>Bitrix24 Domain (1)</strong> -  Указываем <strong>доменное имя</strong> вашего Битрикс24 <strong>(без https://)</strong></li>
+<li><strong>Asterisk AMI Host (2)</strong> - Указываем <strong>внешний ip-адрес</strong> AMI интерфейса, или его доменное имя</li>
+<li><strong>Asterisk AMI Port (3)</strong> - Указываем <strong>внешний порт</strong> AMI интерфейса</li>
+<li><strong>Asterisk AMI Username (4)</strong> - Указываем <strong>AMI Username</strong> (Смотрите раздел <a href="#настройка-ami-asterisk">Настройка AMI Asterisk</a>) </li>
+<li><strong>Asterisk AMI Secret (5)</strong> - Указываем <strong>AMI Secret</strong> (Смотрите раздел <a href="#настройка-ami-asterisk">Настройка AMI Asterisk</a>)</li>
+</ul>
+</li>
+</ul>
+<h4 id="callbee_2">Подключение интеграции на стороне сервиса Callbee через установщик</h4>
+<ul>
+<li>Нажмите <strong>«Install Integration»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_28.png" /></li>
+<li>Выберите <strong>Bitrix24</strong> в поле <strong>CRM</strong></li>
+<li>Выберите <strong>Asterisk</strong> в поле <strong>Platform</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_29.png" /></li>
+<li>Заполните все <strong>необходимые поля</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_30.png" /><ul>
+<li><strong>Asterisk AMI Host (1)</strong> - Указываем <strong>внешний ip-адрес</strong> AMI интерфейса, или его доменное имя</li>
+<li><strong>Asterisk AMI Port (2)</strong> - Указываем <strong>внешний порт</strong> AMI интерфейса</li>
+<li><strong>Asterisk AMI Username (3)</strong> - Указываем <strong>AMI Username</strong> (Смотрите раздел <a href="#настройка-ami-asterisk">Настройка AMI Asterisk</a>)</li>
+<li><strong>Asterisk AMI Secret (4)</strong> - Указываем <strong>AMI Secret</strong> (Смотрите раздел <a href="#настройка-ami-asterisk">Настройка AMI Asterisk</a>)</li>
+</ul>
+</li>
+</ul>
+<h4 id="callbee-pro-demo-">Настройка интеграции на стороне сервиса Callbee для каждой линии АТС в отдельности (доступно в pro-версии и demo-режиме)</h4>
+<p><img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_27.png" /></p>
+<ul>
+<li><strong>Use B24 users table (1)</strong> - <strong>Перенос настройки внутренних номеров интеграции из Битрикс24 в Callbee.</strong></li>
+<li><strong>Record URL (2)</strong> - <strong>Ссылка</strong> для <strong>записей разговоров</strong>. По данной ссылке Битрикс24 будет <strong>сохранять себе</strong> запись разговора. <strong>Ссылка</strong> должна быть <strong>всегда доступна</strong>. </li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p>Если <strong>сервер телефонии АТС</strong> находится в <strong>одной локальной сети</strong> с <strong>коробочной версией</strong> Битрикс24, то <strong>можно</strong> указывать <strong>локальный IP-адрес АТС</strong>, но в таком случае <strong>индикатор доступности</strong> будет гореть <strong>красным</strong> цветом (указывает что ссылка некорректна).
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_39.png" /></p>
+</div>
+<ul>
+<li><strong>Ignore Lines (DID) Numbers (3)</strong> - Указываем <strong>DID</strong> номер(а) <strong>через запятую и один пробел</strong>, на которые интеграция <strong>не будет</strong> реагировать. Эта функция позволяет <strong>не реагировать</strong> на номера, не относящиеся к работе в CRM. Например прямые номера бухгалтерии или администрации.</li>
+<li><strong>Line (DID) (4)</strong> - Номер подразделения отдела. Номер для <strong>входящих звонков</strong>, который относится к <strong>подразделению/отделу</strong> (номер берется из настроек <strong>FreePBX</strong> поля <strong>DID Number</strong> )</li>
+<li><strong>Description (5)</strong> - <strong>Описание</strong> линии (DID), будет заполнять поле <strong>Линия</strong> в <strong>карточке Контакта</strong> и <strong>Сделки</strong> в <strong>Битрикс24</strong>, если оставить поле Description <strong>пустым</strong> будет проброшен <strong>номер линии (DID)</strong> </li>
+<li><strong>Manager ID For Missed Calls (6)</strong> - <strong>ID пользователя в Битрикс24</strong> для <strong>пропущенных вызовов</strong> (ответственный пользователь за пропущенные вызовы для новых клиентов, которых нет в Битрикс24). Можно устанавливать для каждой линии свое значение. <strong>Это поле не должно быть пустым!</strong></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Посмотреть какой <strong>Manager ID</strong> можно открыв <strong>профиль сотрудника</strong> в Битрикс24 в <strong>адресной строке</strong> Вашего <strong>браузера</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_40.png" />
+На скриншоте выше значение <strong>Manager ID</strong> равно <strong>1</strong></p>
+</div>
+<ul>
+<li><strong>Smart Call (7)</strong> - Включение <strong>умной маршрутизации</strong> (перевод звонка на ответственного сотрудника) <strong>с указанием времени работы</strong>. <strong>Вне графика работы</strong> умной маршрутизации <strong>звонок</strong> будет идти по <strong>маршруту по умолчанию</strong>. Чаще всего применяется для того, чтобы проиграть клиенту сообщение о том, что он дозвонился в нерабочее время.</li>
+<li><strong>Manager time in bitrix24 (8)</strong> - Включение <strong>графика работы</strong> для умной маршрушизации <strong>из Битрикс24</strong> </li>
+<li><strong>Auto Lead (Deal) (9)</strong> - Включение <strong>автоматического создания</strong> лидов или сделок (+контакт) Битрикс24 (в зависимочсти от режима работы Битрикс24)</li>
+<li><strong>Add to chat bitrix24 (10)</strong> - Включение <strong>отображения информации</strong> о всех звонках в <strong>чате</strong> Битрикс24</li>
+<li><strong>Add DID Lines (11)</strong> - Добавление линии для настройки</li>
+<li><strong>SAVE AND RESTART (12)</strong> - <strong>Сохранение</strong> настроек с <strong>одновременнным перезапуском</strong> интеграции</li>
+</ul>
+<h4 id="callbee_3">Настройка интеграции на стороне сервиса Callbee для каждого внутреннего номера.</h4>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p><em>Для настройки <strong>внутренних номеров</strong> через сервис <strong>CallBee</strong> нужно <strong>включить</strong> переключатель <strong>«Use B24 users table»</strong></em></p>
+</div>
+<ul>
+<li>Заходим в <strong>настройки интеграции</strong>, нажимаем <strong>«Settings»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_31.png" /></li>
+<li><strong>Включаем</strong> переключатель <strong>«Use B24 users table»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_36.png" /></li>
+<li>После включения <strong>«Use B24 users table»</strong> появится пункт меню <strong>«Bitrix24 users»</strong>, переходим в него
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_37.png" />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_42.png" />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_43.png" />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_44.png" /></li>
+<li><strong>Go to settings (1)</strong> - Переход на страницу настроек</li>
+<li><strong>Integration Info (2)</strong> - Информация о интеграции</li>
+<li><strong>Show active users (3)</strong> - Фильтр для отображения <strong>активных</strong> пользователей</li>
+<li><strong>Save and restart (4)</strong> - <strong>Сохранение</strong> настроек и <strong>перезапуск</strong> интеграции</li>
+<li><strong>Search (5)</strong> - Поиск записей в таблице настроек</li>
+<li><strong>Active (6)</strong> - Включение <strong>настроек для пользователя (сотрудника)</strong> через сервис CallBee. <strong>Акитвация коммерческой лицензии</strong> для этого <strong>пользователя</strong> (<strong>актиных пользователей</strong> должно быть <strong>не больше количества лицензий</strong>) Если переключатель стоит в режиме <strong>off</strong> то интеграция будет <strong>игнорировать</strong> это пользователя, даже если у него прописан внутренний номер и заполнены все остальные поля. </li>
+<li><strong>Bitrix ID (7)</strong> - ID пользователя (сотрудника) <strong>в Битрикс24</strong></li>
+<li><strong>Name (8)</strong> - Имя пользователя (сотрудника) <strong>в Битрикс24</strong></li>
+<li><strong>Internal Number (9)</strong> - <strong>Внутренний номер</strong> пользователя (сотрудника) во <strong>FreePBX</strong></li>
+<li><strong>External Number (10)</strong>  -  <strong>Личный номер</strong> пользователя (сотрудника) что будет совершать <strong>звонки по клику из Битрикс24</strong> на <strong>мобильном устройстве</strong>. При звонке по клику на мобильном устройстве будет осуществляться вызов <strong>в обе</strong> стороны - <strong>пользовтателю (сотруднику)</strong> и <strong>клиенту</strong> Вашей компании. Номер используется для <strong>взаимодействия</strong> приложения Битрикс24 на мобильном устройстве и <strong>осуществления вызовов</strong> звонком по клику.</li>
+<li><strong>Smart Call (11)</strong> - Включение <strong>умной маршрутизации</strong> (перевод звонка на ответственного сотрудника) с указанием <strong>времени работы</strong>. <strong>Вне графика</strong> работы умной маршрутизации звонок будет идти по маршруту <strong>по умолчанию.</strong> Чаще всего применяется для того, чтобы проиграть клиенту сообщение о том, что он дозвонился в нерабочее время.</li>
+<li><strong>B24 Time (12)</strong> - Включение <strong>графика работы</strong> для пользователя (сотрудника) <strong>из Битрикс24</strong> для умной маршрутизации</li>
+<li><strong>Add to Chat (13)</strong> - Включение <strong>отображения информации</strong> о всех звонках в <strong>чате Битрикс24</strong></li>
+<li><strong>Auto Answer (14)</strong> - Включение <strong>автоответа</strong> на <strong>SIP-телефоне</strong>, (аппаратном или программном (софтфон). При звонке по клику с использованием сервиса <strong>CallBee</strong>  первоначально звонок <strong>приходит</strong> как <strong>входящий</strong> на <strong>SIP-телефон</strong> (аппаратный или программный) и после его <strong>приема</strong> происходит <strong>исходящий вызов</strong> клиенту Вашей компании. Включение данной функции позволит <strong>SIP-телефону</strong> (аппаратному или программному) принимать звонок <strong>автоматически, без участия</strong> пользователя (сотрудника). В том случае если <strong>SIP-телефон</strong> (аппаратный или программный) <strong>поддерживает данный фуннкционал</strong> (например SIP-телефоны Yealink с актуальной прошивкой)  </li>
+<li><strong>Multiple Registration (15)</strong> - Включение функции <strong>Multiple Registration</strong> позволяет пользоваться звонком по клику при наличии <strong>нескольких SIP-телефонов</strong> (аппаратных или программных)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p><img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_41.png" /></p>
+<p><strong>При включении</strong> данной функции <strong>автоматически отключается</strong> функция <strong>автоответа</strong> (из предыдущего пункта)</p>
+</div>
+<h2 id="24_1">Настройка в Битрикс24.</h2>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p><em>Если пункты, описанные ниже у Вас <strong>отсутствуют</strong>, то следует <strong>проверить корректность предыдущих настроек!!!</strong></em></p>
+</div>
+<ul>
+<li>
+<p>В <strong>меню Битрикс24</strong> перейдите на страницу <strong>«Телефония»</strong><br />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_7.png" /></p>
+</li>
+<li>
+<p>Далее выбрать <strong>«Настройка телефонии» (1)</strong>
+  <img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_8.png" /></p>
+</li>
+<li>Настройках телефонии необходимо выбрать в пункте <strong>«Номер для исходящего
+звонка по-умолчанию (2)» -&gt; «Приложение Asterisk и Yeastar Callbee.io»</strong> </li>
+</ul>
+<p>Далее нажимаем <strong>«Сохранить»</strong></p>
+<p><img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_10.png" /></p>
+<p><strong>Настройка интеграции завершена!</strong>    </p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул">
+      
+        
+        <a href="../../amoCRM/yeastar/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Yeastar PBX System" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Yeastar PBX System
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../yeastar/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Yeastar PBX System" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Yeastar PBX System
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://callbee.io">Callbee</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "search": "../../assets/javascripts/workers/search.5e67fbfe.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e87a5f81.min.js"></script>
+      
+    
+  </body>
+</html>

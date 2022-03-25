@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+         <loc>https://callbee.io/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://callbee.io/ru/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://callbee.io/en/"/>
+         
+    </url>
+    <url>
+         <loc>https://callbee.io/Bitrix24/asterisk/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://callbee.io/ru/Bitrix24/asterisk/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://callbee.io/en/Bitrix24/asterisk/"/>
+         
+    </url>
+    <url>
+         <loc>https://callbee.io/Bitrix24/yeastar/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://callbee.io/ru/Bitrix24/yeastar/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://callbee.io/en/Bitrix24/yeastar/"/>
+         
+    </url>
+    <url>
+         <loc>https://callbee.io/amoCRM/asterisk/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://callbee.io/ru/amoCRM/asterisk/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://callbee.io/en/amoCRM/asterisk/"/>
+         
+    </url>
+    <url>
+         <loc>https://callbee.io/amoCRM/yeastar/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://callbee.io/ru/amoCRM/yeastar/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://callbee.io/en/amoCRM/yeastar/"/>
+         
+    </url>
+    <url>
+         <loc>https://callbee.io/moysklad/asterisk/</loc>
+         <lastmod>2022-03-25</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="ru" href="https://callbee.io/ru/moysklad/asterisk/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://callbee.io/en/moysklad/asterisk/"/>
+         
+    </url>
+</urlset>
