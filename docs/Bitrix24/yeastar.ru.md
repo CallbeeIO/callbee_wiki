@@ -163,12 +163,9 @@
 
         * __FTP host (9)__ - ваш __статический IP адрес__ для подключения к FTP Yeastar
         * __FTP port (10)__ - ваш __порт__ для подключения к FTP Yeastar (стандартный порт FTP __21__)
-        * __FTP username (11)__ - __имя пользователя__ к FTP Yeastar
-        (см. раздел [1.2 Настройка хранилища данных](#12))
-        ![install integration](../img/yeastar/yeastar-13.png)
-        * __FTP secret (12)__ - __пароль__ к FTP Yeastar
-        (см. раздел [1.2 Настройка хранилища данных](#12))
-        ![install integration](../img/yeastar/yeastar_b24_11.png)
+        * __FTP username (11)__ - __имя пользователя__ к FTP Yeastar как у службы SSH (по умолчанию support)
+        * __FTP secret (12)__ - __пароль__ к FTP Yeastar как у службы SSH (активируем деактивируем SSH, чтобы посмотреть пароль)
+        ![install integration](../img/yeastar/yeastar-ru-14.png)
         * __Path records directory (13)__ - если оставить __поле пустым__, будет использоваться __стандартный путь__ для __хранении файлов записей разговоров__ /ftp_media mmc/autorecords/
 
     !!! info "для Yeastar S50/S100/S300"

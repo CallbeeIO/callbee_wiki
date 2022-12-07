@@ -157,12 +157,9 @@ After performing all the configuration as described above, you need to enable th
 
         * __FTP host (9)__ - your __static IP address__ used to connect to the Yeastar FTP
         * __FTP port (10)__ - your __port__ used to connect to the Yeastar FTP (__21__ is a standard FTP port)
-        * __FTP username (11)__ - the __username__ used to log in to the Yeastar FTP
-        (See [1.2 Data Storage Configuration](#12-data-storage-configuration))
-        ![install integration](../img/yeastar/yeastar-13-eng.png)
-        * __FTP secret (12)__ - the __password__ used to log in to the Yeastar FTP
-        (See [1.2 Data Storage Configuration](#12-data-storage-configuration))
-        ![install integration](../img/yeastar/yeastar_b24_11-eng.png)
+        * __FTP username (11)__ - the __username__ used to log in to the Yeastar FTP is the same as SSH (defaul support)
+        * __FTP secret (12)__ - the __password__ used to log in to the Yeastar FTP is the same as SSH (activate/diactivate SSH show password)
+        ![install integration](../img/yeastar/yeastar-en-14.png)
         * __Path records directory (13)__ - if this __field__ is left __blank__, the __default directory__ for __saving the call record files__ at /ftp_media mmc/autorecords/ will be used
 
     !!! info "for Yeastar S50/S100/S300"
