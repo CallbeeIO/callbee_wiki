@@ -1,0 +1,874 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Callbee Wiki">
+      
+      
+      
+        <link rel="canonical" href="https://callbee.io/ru/amoCRM/yeastar/">
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Yeastar PBX System - Callbee Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ip-yeastar-s-amocrm-callbee" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../" title="Callbee Wiki" class="md-header__button md-logo" aria-label="Callbee Wiki" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Callbee Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Yeastar PBX System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Выберите язык">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="ru" class="md-select__link">
+                    Russian
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../../en/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Callbee Wiki" class="md-nav__button md-logo" aria-label="Callbee Wiki" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    Callbee Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Добро пожаловать на Callbee Wiki
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          amoCRM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="amoCRM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          amoCRM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asterisk/" class="md-nav__link">
+        Asterisk + FreePBX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Yeastar PBX System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Yeastar PBX System
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Необходимые требования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Важные замечания
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Работа интеграции
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ip-yeastar" class="md-nav__link">
+    1. Настройка IP-АТС Yeastar
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Настройка IP-АТС Yeastar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 Настройка сетевых служб
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 Настройка хранилища данных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-api" class="md-nav__link">
+    1.3 Настройка API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. Сетевые настройки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-callbee" class="md-nav__link">
+    3. Настройка интеграции в личном кабинете сервиса Callbee
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-amocrm" class="md-nav__link">
+    4. Подключение интеграции на стороне amoCRM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-google-chrome" class="md-nav__link">
+    5. Подключение и настройка расширения в браузере Google Chrome
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Bitrix24
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bitrix24" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Bitrix24
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bitrix24/asterisk/" class="md-nav__link">
+        Asterisk + FreePBX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bitrix24/yeastar/" class="md-nav__link">
+        Yeastar PBX System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Необходимые требования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Важные замечания
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Работа интеграции
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ip-yeastar" class="md-nav__link">
+    1. Настройка IP-АТС Yeastar
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Настройка IP-АТС Yeastar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 Настройка сетевых служб
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 Настройка хранилища данных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-api" class="md-nav__link">
+    1.3 Настройка API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. Сетевые настройки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-callbee" class="md-nav__link">
+    3. Настройка интеграции в личном кабинете сервиса Callbee
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-amocrm" class="md-nav__link">
+    4. Подключение интеграции на стороне amoCRM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-google-chrome" class="md-nav__link">
+    5. Подключение и настройка расширения в браузере Google Chrome
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ip-yeastar-s-amocrm-callbee">Настройка интеграции IP-АТС Yeastar S серии с amoCRM при помощи сервиса Callbee</h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Для подключения интеграции необходимо поочередно выполнить пункты данного руководства в той последовательности, как они описаны.</em></p>
+</div>
+<h2 id="_1">Необходимые требования</h2>
+<ul>
+<li>IP-АТС серии S (S20, S50, S100, S300).</li>
+<li>Статический IP адрес (необходимо приобрести у вашего интернет-провайдера).</li>
+</ul>
+<h2 id="_2">Важные замечания</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Интеграция поддерживает внутренние номера до 4-х знаков включительно.</li>
+<li>Интеграция не преобразует формат телефонных номеров, необходимо работать в международном формате как в amoCRM, так и на АТС.</li>
+<li>Важно понимать, что голосовой SIP трафик за рамки вашей АТС никуда не выходит.</li>
+</ul>
+</div>
+<h2 id="_3">Работа интеграции</h2>
+<p>Интеграция реализует связь по AMI протоколу с вашей IP-АТС Yeastar S серии и API amoCRM, а также осуществляет на стороне нашего сервера конвертацию файлов аудиозаписей разговоров из формата wav (записи разговоров создаются на IP-АТС Yeastar только в формате wav) в формат mp3 сохраняя их на <strong>Google Drive</strong> и отправкой ссылки на аудиозапись разговора в amoCRM.</p>
+<p>Интеграция имеет возможность получить запись разговора с IP-АТС по <strong>FTP</strong> (для IP-АТС Yeastar S20) или <strong>API</strong> (для IP-АТС Yeastar S50/S100/S300) в зависимости от настроек интеграции и самой IP-АТС.</p>
+<p>Интеграция взаимодействует с amoCRM по API: отправляет запросы на проверку номера телефона, создание сущностей в amoCRM и проброс ссылки на запись разговора.</p>
+<h2 id="1-ip-yeastar">1. Настройка IP-АТС Yeastar</h2>
+<h3 id="11">1.1 Настройка сетевых служб</h3>
+<p>Открываем админ панель АТС и переходим в раздел Настройки - <strong>Система</strong> – <strong>Безопасность</strong> далее переходим на вкладку <strong>Сетевые службы</strong> и настраиваем следующее:</p>
+<p><img alt="settings-yeastar" src="../../img/yeastar/yeastar-9.png" /></p>
+<ul>
+<li>Активируем пункт <strong>Включить AMI</strong></li>
+<li>Изменяем стандартные <strong>Имя пользователя</strong> и <strong>Пароль</strong> (эти имя пользователя и пароль нужно будет прописать в личном кабинете Callbee)</li>
+<li>В появившемся поле <strong>Разрешённые IP/Маска</strong> прописываем IP адреса из <a href="/#ip">списка</a> разрешенных</li>
+<li>Меняем протокол с HTTPS на HTTP (Смену протокола следует производить если не установлен валидный сертификат)</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S20</p>
+<ul>
+<li>Активируем пункт <strong>Включить FTP</strong></li>
+<li>Активируем пункт <strong>Включить TFTP</strong></li>
+</ul>
+</div>
+<p><img alt="settings-yeastar" src="../../img/yeastar/yeastar-10.png" /></p>
+<h3 id="12">1.2 Настройка хранилища данных</h3>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S20</p>
+</div>
+<p>Переходим в раздел <strong>Настройки - Система - Хранилища данных</strong> и переходим во вкладку <strong>File Share</strong>:</p>
+<ul>
+<li>Активируем <strong>Активировать FTP доступ</strong></li>
+<li>Активируем <strong>Активировать файловое хранилище</strong></li>
+</ul>
+<p><img alt="FTP" src="../../img/yeastar/yeastar-2.png" /></p>
+<h3 id="13-api">1.3 Настройка API</h3>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S50/S100/S300</p>
+</div>
+<p>Переходим в раздел <strong>Настройки АТС - Настройки АТС - API</strong>:</p>
+<ul>
+<li>Активируем <strong>API</strong></li>
+<li>Активируем пункт <strong>Монитор АТС</strong> всех номеров и линий</li>
+</ul>
+<p><img alt="API" src="../../img/yeastar/yeastar-3.png" /></p>
+<h2 id="2">2. Сетевые настройки</h2>
+<p>Для того, чтобы интеграция могла подключится к вашей АТС, у вас обязательно должен быть статический IP адрес и проброшены через NAT к АТС следующие порты:</p>
+<ul>
+<li><strong>5038 TCP</strong> – для доступа к AMI Yeastar</li>
+<li><strong>21 TCP</strong> – для доступа к FTP Yeastar (для Yeastar S20)</li>
+<li><strong>8088 (порт к WEB интерфейсу по умолчанию) HTTP/HTTPS</strong> – для доступа к API Yeastar</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Интерфейс настройки проброса портов сильно отличается в зависимости от используемого в вашей сети маршрутизатора. Актуальную инструкцию по пробросу портов под ваш маршрутизатор вы можете найти на официальном сайте производителя маршрутизатора.</p>
+</div>
+<h2 id="3-callbee">3. Настройка интеграции в личном кабинете сервиса Callbee</h2>
+<p>В личном кабинете сервиса Callbee для интеграции с amoCRM необходимо:</p>
+<ul>
+<li>Во вкладке <strong>Integration</strong> нажить на кнопку <strong>Install integration</strong> и выбрать вкладку <strong>AMOCRM WITH YEASTAR</strong> либо нажать кнопку <strong>Install</strong> на блоке с типом интеграции <strong>AMOCRM WITH YEASTAR</strong></li>
+<li>Заполнить все необходимые пункты для интеграции</li>
+</ul>
+<p><img alt="install integration" src="../../img/yeastar/yeastar-5.png" />
+<img alt="install integration" src="../../img/yeastar/yeastar-11.png" /></p>
+<ul>
+<li>В поле <strong>amoCRM Domain</strong> обязательно необходимо внести ваш домен amoCRM (например, callbee.amocrm.ru без https://)</li>
+<li><strong>amoCRM TOKEN</strong> - Токен для соединения с AmoCRM, этот токен необходимо будет вставить в интеграцию
+на стороне AmoCRM (токен должен быть из 12 символов, правее есть кнопка генерации токена). Настройка интеграции на стороне AmoCRM описана <a href="#amocrm">далее</a></li>
+<li><strong>Google Chrome TOKEN</strong> - Токен для соединения с расширением в браузере Google Chrome, этот токен необходимо будет вставить в параметрах расширения (токен должен быть из 12 символов, правее есть кнопка генерации токена). Настройка расширения описана <a href="#5-google-chrome">далее</a></li>
+<li><strong>Asterisk AMI Host/Port/Username/Secret</strong> - Настройка подключения по AMI к ATC (IP-адрес сервера или доменное имя, порт, имя пользователя, пароль)</li>
+<li>
+<p><strong>FTP</strong> или <strong>API</strong></p>
+<div class="admonition info">
+<p class="admonition-title">FTP для Yeastar S20</p>
+<ul>
+<li><strong>FTP host</strong> - ваш статический IP адрес для подключения к FTP Yeastar</li>
+<li><strong>FTP port</strong> - ваш порт для подключения к FTP Yeastar (стандартный порт FTP 21)</li>
+<li><strong>FTP username</strong> - имя пользователя к FTP Yeastar</li>
+<li><strong>FTP secret</strong> - пароль к FTP Yeastar</li>
+<li><strong>Path records directory</strong> - если оставить поле пустым, будет использоваться стандартный путь для хранении файлов записей разговоров /ftp_media mmc/autorecords/</li>
+</ul>
+</div>
+<p><img alt="install integration" src="../../img/yeastar/yeastar-12.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">API для Yeastar S50/S100/S300</p>
+<ul>
+<li><strong>API host</strong> - ваш статический IP адрес для подключения к API Yeastar</li>
+<li><strong>API port</strong> - ваш порт для подключения к API Yeastar</li>
+<li><strong>API username</strong> - имя пользователя к API Yeastar</li>
+<li><strong>API secret</strong> - пароль к API Yeastar</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Google Drive</strong> - Подключение <strong>Google Drive</strong> к интеграции</p>
+<p>Нажимаем на <strong>Google Drive Connect</strong>
+<img alt="install integration" src="../../img/yeastar/google_drive/gd-1.png" /></p>
+<p>Заходим под своим аккаунтом <strong>Google</strong>, далее нажимаем <strong>Разрешить</strong>
+<img alt="install integration" src="../../img/yeastar/google_drive/gd-2.png" /></p>
+<p>Далее нажимаем <strong>Разрешить</strong>
+<img alt="install integration" src="../../img/yeastar/google_drive/gd-3.png" /></p>
+<p>Копируем код и вставляем в поле <strong>google drive code</strong>
+<img alt="install integration" src="../../img/yeastar/google_drive/gd-4.png" /></p>
+</li>
+<li>
+<p><strong>Convert to mp3</strong> - конвертировать аудиозаписи в mp3</p>
+</li>
+<li><strong>Ignore DID numbers</strong> - DID номер(а) через запятую на входящим маршруте (интеграция будет игнорировать эти входящие маршруты)</li>
+<li><strong>amoCRM user ID for missed calls</strong> - ID пользователя в amoCRM для пропущенных вызовов (ответственный пользователь за пропущенные вызовы для новых клиентов, которых нет в amoCRM, например)</li>
+<li><strong>Smart call</strong> - Включение умной маршрутизации (перевод звонка на ответственного сотрудника)</li>
+<li><strong>Unsorted during a phone call</strong> - Создание неразобранного в amoCRM в момент ответа на входящий звонок</li>
+<li><strong>Incoming call</strong> - При входящем звонке создавать <strong>Неразобранное</strong>, <strong>Контакт</strong>, <strong>Контакт + Сделка</strong></li>
+<li><strong>Outgoing calls</strong> - При исходящем звонке создавать <strong>Неразобранное</strong>, <strong>Контакт</strong>, <strong>Контакт + Сделка</strong></li>
+<li><strong>Save</strong> - Сохранение настроек</li>
+</ul>
+<h2 id="4-amocrm">4. Подключение интеграции на стороне amoCRM</h2>
+<div class="admonition warning">
+<p class="admonition-title">Внимание</p>
+<ul>
+<li>Просим обратить особое внимание - название, логотипы могут отличаться от скриншотов данного руководства</li>
+<li>Интеграция будет работать только для внутренних номеров, которые вы указали у сотрудников</li>
+</ul>
+</div>
+<p><img alt="settings-amocrm" src="../../img/asterisk/asterisk-9.png" /></p>
+<ul>
+<li>В настройках amoCRM, выбрать пункт <strong>Интеграции</strong>, сверху в строке поиска ищем по названию <strong>Callbee</strong>, либо в разделе <strong>Телефония</strong> найти интеграцию <strong>Callbee</strong> (<strong>Asterisk и Yeastar</strong>), согласившись с условиями нажать на кнопку <strong>Установить</strong></li>
+</ul>
+<!-- ![settings-amocrm](../img/asterisk/asterisk-10.png) -->
+<ul>
+<li>Далее необходимо прописать внутренние номера сотрудников.
+<img alt="settings-amocrm" src="../../img/asterisk/asterisk-11.png" /></li>
+<li>В поле <strong>Token</strong> Уникальный токен, необходимо скопировать из пункта <strong>AMOCRM TOKEN</strong> из настроек вашей интеграции в личном кабинете</li>
+<li>Сохранить настройки.</li>
+<li>В личном кабинете сервиса <strong>Callbee</strong> после всех настроек на стороне amoCRM необходимо перезагрузить интеграцию.</li>
+</ul>
+<h2 id="5-google-chrome">5. Подключение и настройка расширения в браузере Google Chrome</h2>
+<p>Расширение <strong>Callbee</strong> в google chrome используется для оповещения сотрудника о поступающих вызовах.</p>
+<p>Установка:</p>
+<ul>
+<li>В магазине google chrome находим расширение <strong>Callbee</strong> и устанавливаем его.</li>
+<li>Либо перейти по <a href="https://chrome.google.com/webstore/detail/callbee/belkefpbaepibinolmlpohpggbkiogco?hl=ru">ссылке</a> и установить.</li>
+</ul>
+<p>Настройка:
+<img alt="settings-google-chrome" src="../../img/asterisk/google-chrome.png" /></p>
+<ul>
+<li><strong>New version</strong> - Отметить пункт (обязательно).</li>
+<li><strong>Click on the card to open a new tab in the browser</strong> - Переход в карточку контакта по клику всплывающей карточки в новой вкладке браузера, по необходимости.</li>
+<li><strong>Extension number</strong> - Внутренний номер телефона сотрудника.</li>
+<li><strong>Server or token</strong> - Уникальный токен, необходимо скопировать из пункта <strong>GOOGLE CHROME EXTENSION TOKEN</strong> из настроек вашей интеграции в личном кабинете.</li>
+<li>Сохраняем настройки.</li>
+</ul>
+<p>Статус расширения:</p>
+<p><img alt="google-chrome-extension-on" src="../../img/asterisk/gh-on.png" /></p>
+<p><strong>ON</strong> - работает умная маршрутизация, отображаются оповещения</p>
+<p><img alt="google-chrome-extension-on" src="../../img/asterisk/gh-off.png" /></p>
+<p><strong>OFF</strong> - отключены все оповещения, не работает умная маршрутизация</p>
+<p>На данном этапе настройка считается выполненной.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+      
+        
+        <a href="../asterisk/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Asterisk + FreePBX" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Asterisk + FreePBX
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../Bitrix24/asterisk/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Asterisk + FreePBX" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Asterisk + FreePBX
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://callbee.io">Callbee</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

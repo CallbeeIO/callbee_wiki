@@ -1,0 +1,1101 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Callbee Wiki">
+      
+      
+      
+        <link rel="canonical" href="https://callbee.io/ru/Bitrix24/yeastar/">
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Yeastar PBX System - Callbee Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ip-yeastar-s-24-callbee" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../" title="Callbee Wiki" class="md-header__button md-logo" aria-label="Callbee Wiki" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Callbee Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Yeastar PBX System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Выберите язык">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="ru" class="md-select__link">
+                    Russian
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../../en/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Callbee Wiki" class="md-nav__button md-logo" aria-label="Callbee Wiki" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    Callbee Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Добро пожаловать на Callbee Wiki
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          amoCRM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="amoCRM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          amoCRM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../amoCRM/asterisk/" class="md-nav__link">
+        Asterisk + FreePBX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../amoCRM/yeastar/" class="md-nav__link">
+        Yeastar PBX System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Bitrix24
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bitrix24" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Bitrix24
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asterisk/" class="md-nav__link">
+        Asterisk + FreePBX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Yeastar PBX System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Yeastar PBX System
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Необходимые требования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Важные замечания
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Работа интеграции
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ip-yeastar" class="md-nav__link">
+    1. Настройка IP-АТС Yeastar
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Настройка IP-АТС Yeastar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 Настройка сетевых служб
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 Настройка хранилища данных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-api" class="md-nav__link">
+    1.3 Настройка API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. Сетевые настройки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-24" class="md-nav__link">
+    3. Первичная настройка Битрикс24
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Первичная настройка Битрикс24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 Установка приложения
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 Настройка внутренних номеров пользователей
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-callbee" class="md-nav__link">
+    4. Настройка интеграции в личном кабинете сервиса Callbee
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Настройка интеграции в личном кабинете сервиса Callbee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-callbee" class="md-nav__link">
+    4.1 Подключение интеграции на стороне сервиса Callbee вручную
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-callbee" class="md-nav__link">
+    4.2 Подключение интеграции на стороне сервиса Callbee через установщик
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3 Настройка записей разговоров
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-callbee-pro-demo-" class="md-nav__link">
+    4.4 Настройка интеграции на стороне сервиса Callbee для каждой линии АТС в отдельности (доступно в pro-версии и demo-режиме)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-callbee" class="md-nav__link">
+    4.5 Настройка интеграции на стороне сервиса Callbee для каждого внутреннего номера.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-24" class="md-nav__link">
+    5. Дальнейшая настройка Битрикс24
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Дальнейшая настройка Битрикс24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-24" class="md-nav__link">
+    5.1 Настройка телефонии в Битрикс24
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Необходимые требования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Важные замечания
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Работа интеграции
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ip-yeastar" class="md-nav__link">
+    1. Настройка IP-АТС Yeastar
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Настройка IP-АТС Yeastar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 Настройка сетевых служб
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 Настройка хранилища данных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-api" class="md-nav__link">
+    1.3 Настройка API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. Сетевые настройки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-24" class="md-nav__link">
+    3. Первичная настройка Битрикс24
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Первичная настройка Битрикс24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 Установка приложения
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 Настройка внутренних номеров пользователей
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-callbee" class="md-nav__link">
+    4. Настройка интеграции в личном кабинете сервиса Callbee
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Настройка интеграции в личном кабинете сервиса Callbee">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-callbee" class="md-nav__link">
+    4.1 Подключение интеграции на стороне сервиса Callbee вручную
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-callbee" class="md-nav__link">
+    4.2 Подключение интеграции на стороне сервиса Callbee через установщик
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3 Настройка записей разговоров
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-callbee-pro-demo-" class="md-nav__link">
+    4.4 Настройка интеграции на стороне сервиса Callbee для каждой линии АТС в отдельности (доступно в pro-версии и demo-режиме)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-callbee" class="md-nav__link">
+    4.5 Настройка интеграции на стороне сервиса Callbee для каждого внутреннего номера.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-24" class="md-nav__link">
+    5. Дальнейшая настройка Битрикс24
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Дальнейшая настройка Битрикс24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-24" class="md-nav__link">
+    5.1 Настройка телефонии в Битрикс24
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ip-yeastar-s-24-callbee">Настройка интеграции IP-АТС Yeastar S серии с Битрикс24 при помощи сервиса Callbee</h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Для подключения интеграции необходимо поочередно выполнить пункты данного руководства в той последовательности, как они описаны.</em></p>
+</div>
+<h2 id="_1">Необходимые требования</h2>
+<ul>
+<li>IP-АТС серии S серии (S20, S50, S100, S300).</li>
+<li>Статический IP адрес (необходимо приобрести у вашего интернет-провайдера).</li>
+<li>Облачный или коробочный Битрикс24 любой редакции.</li>
+<li>Для коробочного Битрикс24 необходим валидный SSL сертификат.</li>
+</ul>
+<h2 id="_2">Важные замечания</h2>
+<ul>
+<li>Интеграция поддерживает внутренние номера до 4-х знаков включительно.</li>
+<li>Интеграция не преобразует формат телефонных номеров, необходимо работать в международном формате как в Битрикс24, так и на АТС.</li>
+</ul>
+<h2 id="_3">Работа интеграции</h2>
+<p>Интеграция реализует связь по AMI протоколу с вашей IP-АТС Yeastar S серии и REST API вашего Битрикс24, а также осуществляет на стороне нашего сервера конвертацию файлов аудиозаписей разговоров из формата wav (записи разговоров создаются на IP-АТС Yeastar только в формате wav) в формат mp3.</p>
+<p>Важно понимать, что голосовой SIP трафик за рамки вашей АТС никуда не выходит.</p>
+<p>Интеграция взаимодействует с Битрикс24 по REST API: отправляет запросы на поднятие карточки звонка, проверку номера телефона и проброс записи разговора с АТС.</p>
+<h2 id="1-ip-yeastar">1. Настройка IP-АТС Yeastar</h2>
+<h3 id="11">1.1 Настройка сетевых служб</h3>
+<p>Открываем админ панель АТС и переходим в раздел Настройки - Система – Безопасность далее переходим во вкладку Сетевые службы и настраиваем следующее:</p>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S20</p>
+<ul>
+<li>Активируем пункт <strong>Включить FTP</strong></li>
+<li>Активируем пункт <strong>Включить TFTP</strong></li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S50/S100/S300</p>
+<ul>
+<li>Меняем протокол с HTTPS на HTTP</li>
+</ul>
+<p>Смену протокола следует производить если не установлен валидный сертификат</p>
+</div>
+<ul>
+<li>Активируем пункт <strong>Включить AMI</strong></li>
+<li>Изменяем стандартные <strong>Имя пользователя</strong> и <strong>Пароль</strong> (эти имя пользователя и пароль нужно будет прописать в личном кабинете Callbee)</li>
+<li>В появившемся поле <strong>Разрешённые IP/Маска</strong> прописываем IP адреса: 89.108.65.246, 31.24.92.54 и 46.101.225.17 с маской 255.255.255.255</li>
+</ul>
+<p><img alt="settings-yeastar" src="../../img/yeastar/yeastar-1.png" /></p>
+<h3 id="12">1.2 Настройка хранилища данных</h3>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S20</p>
+</div>
+<p>Переходим в раздел <strong>Настройки - Система - Хранилища данных</strong> и переходим во вкладку <strong>File Share</strong>:</p>
+<ul>
+<li>Активируем <strong>Активировать FTP доступ</strong></li>
+<li>Активируем <strong>Активировать файловое хранилище</strong></li>
+</ul>
+<p><img alt="FTP" src="../../img/yeastar/yeastar-2.png" /></p>
+<h3 id="13-api">1.3 Настройка API</h3>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S50/S100/S300</p>
+</div>
+<p>Переходим в раздел <strong>Настройки АТС - Настройки АТС - API</strong>:</p>
+<ul>
+<li>Активируем <strong>API</strong></li>
+<li>Активируем пункт <strong>Монитор АТС</strong> всех номеров и линий</li>
+</ul>
+<p><img alt="API" src="../../img/yeastar/yeastar-3.png" /></p>
+<h2 id="2">2. Сетевые настройки</h2>
+<p>Для того, чтобы интеграция могла подключится к вашей АТС, у вас обязательно должен быть статический IP адрес и проброшены через NAT к АТС следующие порты:</p>
+<ul>
+<li><strong>5038 TCP</strong> – для доступа к AMI Yeastar</li>
+<li><strong>21 TCP</strong> – для доступа к FTP Yeastar (для Yeastar S20)</li>
+<li><strong>8088 (порт к WEB интерфейсу по умолчанию) HTTP/HTTPS</strong> – для доступа к API Yeastar</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Интерфейс настройки проброса портов сильно отличается в зависимости от используемого в вашей сети маршрутизатора. Актуальную инструкцию по пробросу портов под ваш маршрутизатор вы можете найти на официальном сайте производителя маршрутизатора.</p>
+</div>
+<h2 id="3-24">3. Первичная настройка Битрикс24</h2>
+<h3 id="31">3.1 Установка приложения</h3>
+<p>Войдите в свой корпоративный портал Битрикс24 пользователем с правами администратора.</p>
+<ul>
+<li>В меню Битрикс24 перейдите на страницу <strong>Приложения</strong> выберите категорию <strong>IP-телефони</strong> и найдите приложение <strong>Callbee</strong></li>
+<li>Перейдите на страницу приложения <strong>Callbee</strong> и нажмите кнопку <strong>Установить</strong></li>
+<li>Далее необходимо ознакомиться и согласиться с лицензионным соглашением и политикой конфиденциальности, отметив эти пункты, и нажать кнопку <strong>УСТАНОВИТЬ</strong></li>
+</ul>
+<p><a href="https://www.bitrix24.ru/apps/?app=5757539.callbee" target="_blank">Сallbee</a> в каталоге приложений Битрикс24</p>
+<h3 id="32">3.2 Настройка внутренних номеров пользователей</h3>
+<ul>
+<li>Перейти на страницу <strong>Сотрудники</strong></li>
+<li>Открыть профиль <strong>Сотрудника</strong></li>
+<li>Внести внутренний телефон сотрудника</li>
+</ul>
+<p><img alt="bitrix24-extension" src="../../img/yeastar/yeastar-4.png" /></p>
+<h2 id="4-callbee">4. Настройка интеграции в личном кабинете сервиса Callbee</h2>
+<p>После проведения всех настроек описанных выше необходимо произвести подключения интеграции.</p>
+<h3 id="41-callbee">4.1 Подключение интеграции на стороне сервиса Callbee вручную</h3>
+<ul>
+<li>
+<p>Нажмите кнопку <strong>BITRIX24 WITH YEASTAR «Install»</strong>
+<img alt="install integration" src="../../img/yeastar/yeastar_b24_1.png" /></p>
+</li>
+<li>
+<p>Заполните <strong>все необходимые</strong> пункты для интеграции<br />
+<img alt="install integration" src="../../img/yeastar/yeastar_b24_2.png" /></p>
+</li>
+<li>
+<p><strong>Bitrix24 Domain (1)</strong> -  Указываем <strong>доменное имя</strong> вашего Битрикс24 <strong>(без https://)</strong></p>
+</li>
+<li><strong>Yeastar AMI host (2)</strong> - Указываем ваш <strong>статический IP адрес</strong> для подключения к <strong>AMI Yeastar</strong></li>
+<li><strong>Yeastar AMI port (3)</strong> - Указываем ваш <strong>порт</strong> для подключения к <strong>AMI Yeastar</strong> (стандартный порт AMI <strong>5038</strong>)</li>
+<li><strong>AMI username (4)</strong> - Указываем <strong>имя пользователя</strong> AMI Yeastar</li>
+<li><strong>AMI secret (5)</strong>  - Указываем <strong>пароль</strong> AMI Yeastar</li>
+<li>
+<p><strong>Region (6)</strong> - Выбор <strong>ближайшего региона</strong> для подключения Yeastar</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Данная функция обеспечивает <strong>наилучшую скорость взаимодействия Yeastar</strong> с сервисом <strong>CallBee</strong></em>  <br />
+<em>На выбор доступны <strong>три региона</strong>:</em></p>
+<p><img alt="install integration" src="../../img/yeastar/yeastar_b24_5.png" /></p>
+<p><a href="/#ip">Список ip-адресов сервиса:</a></p>
+<ul>
+<li><strong>Russia</strong> - подключение к узлу с интеграцией, расположенного в Российской Федерации  89.108.65.246</li>
+<li><strong>Belarus</strong> - подключение к узлу с интеграцией, расположенного в Республике Беларусь  31.24.92.54</li>
+<li><strong>Germany</strong> - подключение к узлу с интеграцией, расположенного в Германии             46.101.225.17</li>
+<li><strong>AUTO</strong> - автоматическое подключение к любому узлу</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<ul>
+<li>При выборе режима <strong>AUTO</strong> в <strong>настройках безопасности станции</strong> необходимо <strong>добавить все адреса</strong> из <a href="/#ip">списка ip-адресов сервиса</a> в <strong>доверенные</strong> (см. пункт <a href="#11">1.1 Настройка сетевых служб</a>)</li>
+<li>Адрес <strong>89.108.65.246</strong> должен быть <strong>добавлен в доверенные вне зависимости от региона</strong> (с этого <strong>IP адреса</strong> совершается <strong>звонок по клику из битрикс24</strong>)</li>
+</ul>
+</div>
+</li>
+</ul>
+<h3 id="42-callbee">4.2 Подключение интеграции на стороне сервиса Callbee через установщик</h3>
+<ul>
+<li>Нажмите <strong>«Install Integration»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_28.png" /></li>
+<li>Выберите <strong>Bitrix24</strong> в поле <strong>CRM</strong></li>
+<li>Выберите <strong>Yeastar</strong> в поле <strong>Platform</strong>
+<img alt="install integration" src="../../img/yeastar/yeastar_b24_9.png" /></li>
+<li>Заполните все <strong>необходимые поля</strong>
+<img alt="install integration" src="../../img/yeastar/yeastar_b24_10.png" /></li>
+<li><strong>Yeastar AMI host (2)</strong> - Указываем ваш <strong>статический IP адрес</strong> для подключения к <strong>AMI Yeastar</strong></li>
+<li><strong>Yeastar AMI port (3)</strong> - Указываем ваш <strong>порт</strong> для подключения к <strong>AMI Yeastar</strong> (стандартный порт AMI <strong>5038</strong>)</li>
+<li><strong>AMI username (4)</strong> - Указываем <strong>имя пользователя</strong> AMI Yeastar</li>
+<li><strong>AMI secret (5)</strong>  - Указываем <strong>пароль</strong> AMI Yeastar</li>
+</ul>
+<h3 id="43">4.3 Настройка записей разговоров</h3>
+<ul>
+<li>Установите переключатель <strong>FTP/API (7)</strong> в нужное положение в завимисти от <strong>модели</strong> станции Yeastar       </li>
+<li><strong>FTP</strong> (для <strong>Yeastar S20</strong>) / <strong>API</strong> (для <strong>Yeastar S50/S100/S300) (7)</strong> - положение зависит от <strong>модели</strong> станции</li>
+<li>
+<p><strong>Convert to mp3 (8)</strong> - Конвертация записи в <strong>mp3</strong></p>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S20</p>
+<p><img alt="install integration" src="../../img/yeastar/yeastar_b24_6.png" /></p>
+<ul>
+<li><strong>FTP host (9)</strong> - ваш <strong>статический IP адрес</strong> для подключения к FTP Yeastar</li>
+<li><strong>FTP port (10)</strong> - ваш <strong>порт</strong> для подключения к FTP Yeastar (стандартный порт FTP <strong>21</strong>)</li>
+<li><strong>FTP username (11)</strong> - <strong>имя пользователя</strong> к FTP Yeastar как у службы SSH (по умолчанию support)</li>
+<li><strong>FTP secret (12)</strong> - <strong>пароль</strong> к FTP Yeastar как у службы SSH (активируем деактивируем SSH, чтобы посмотреть пароль)
+<img alt="install integration" src="../../img/yeastar/yeastar-ru-14.png" /></li>
+<li><strong>Path records directory (13)</strong> - если оставить <strong>поле пустым</strong>, будет использоваться <strong>стандартный путь</strong> для <strong>хранении файлов записей разговоров</strong> /ftp_media mmc/autorecords/</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">для Yeastar S50/S100/S300</p>
+<p><img alt="install integration" src="../../img/yeastar/yeastar_b24_7.png" /></p>
+<ul>
+<li><strong>API host (9)</strong> - ваш <strong>статический IP адрес</strong> для подключения к API Yeastar</li>
+<li><strong>API port (10)</strong> - ваш <strong>порт</strong> для подключения к API Yeastar</li>
+<li><strong>API username (11)</strong> - <strong>имя пользователя</strong> к API Yeastar</li>
+<li><strong>API secret (12)</strong> - <strong>пароль</strong> к API Yeastar</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<ul>
+<li>
+<p>При <strong>трансфере звонка без сопровождения (слепом)</strong> будет записана только <strong>вторая часть</strong> разговора (со <strong>вторым</strong> поговорившим), соответственно <strong>первая часть</strong> разговора (с <strong>первым</strong> поговорившим) <strong>не будет</strong> сохранена, даже если <strong>включена настройка</strong> записи целой линии.</p>
+</li>
+<li>
+<p>При <strong>трансфере звонка с сопровождением</strong> будет корректно <strong>записан весь разговор</strong> (необходимо чтобы была <strong>включена запись линии</strong>) и <strong>проброшен</strong> в CRM на <strong>последнего поговорившего</strong> в версии интеграции начиная с v2.0.</p>
+</li>
+</ul>
+<p>Данное замечание связано с особенностями работы станций Yeastar</p>
+</div>
+</li>
+</ul>
+<h3 id="44-callbee-pro-demo-">4.4 Настройка интеграции на стороне сервиса Callbee для каждой линии АТС в отдельности (доступно в pro-версии и demo-режиме)</h3>
+<ul>
+<li>Заполните необходимые поля
+    <img alt="install integration" src="../../img/yeastar/yeastar_b24_8.png" /></li>
+<li><strong>Ignore Lines (DID) Numbers (14)</strong> - Указываем <strong>DID</strong> номер(а) <strong>через запятую и один пробел</strong>, на которые интеграция <strong>не будет</strong> реагировать. Эта функция позволяет <strong>не реагировать</strong> на номера, не относящиеся к работе в CRM. Например прямые номера бухгалтерии или администрации.</li>
+<li><strong>Line (DID) (15)</strong> - Номер подразделения отдела. Номер для <strong>входящих звонков</strong>, который относится к <strong>подразделению/отделу</strong> (номер берется из настроек <strong>FreePBX</strong> поля <strong>DID Number</strong> )</li>
+<li><strong>Description (16)</strong> - <strong>Описание</strong> линии (DID), будет заполнять поле <strong>Линия</strong> в <strong>карточке Контакта</strong> и <strong>Сделки</strong> в <strong>Битрикс24</strong>, если оставить поле Description <strong>пустым</strong> будет проброшен <strong>номер линии (DID)</strong></li>
+<li>
+<p><strong>Manager ID For Missed Calls (17)</strong> - <strong>ID пользователя в Битрикс24</strong> для <strong>пропущенных вызовов</strong> (ответственный пользователь за пропущенные вызовы для новых клиентов, которых нет в Битрикс24). Можно устанавливать для каждой линии свое значение. <strong>Это поле не должно быть пустым!</strong></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Посмотреть какой <strong>Manager ID</strong> можно открыв <strong>профиль сотрудника</strong> в Битрикс24 в <strong>адресной строке</strong> Вашего <strong>браузера</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_40.png" />
+ На скриншоте выше значение <strong>Manager ID</strong> равно <strong>1</strong>   </p>
+</div>
+</li>
+<li>
+<p><strong>Smart Call (18)</strong> - Включение <strong>умной маршрутизации</strong> (перевод звонка на ответственного сотрудника) <strong>с указанием времени работы</strong>. <strong>Вне графика работы</strong> умной маршрутизации <strong>звонок</strong> будет идти по <strong>маршруту по умолчанию</strong>. Чаще всего применяется для того, чтобы проиграть клиенту сообщение о том, что он дозвонился в нерабочее время.</p>
+</li>
+<li><strong>Manager time in bitrix24 (19)</strong> - Включение <strong>графика работы</strong> для умной маршрушизации <strong>из Битрикс24</strong> </li>
+<li><strong>Auto Lead (Deal) (20)</strong> - Включение <strong>автоматического создания</strong> лидов или сделок (+контакт) Битрикс24 (в зависимочсти от режима работы Битрикс24)</li>
+<li><strong>Add to chat bitrix24 (21)</strong> - Включение <strong>отображения информации</strong> о всех звонках в <strong>чате</strong> Битрикс24</li>
+<li><strong>Add DID Lines (22)</strong> - Добавление линии для настройки</li>
+<li><strong>SAVE (23)</strong> - <strong>Сохранение</strong> настроек интеграции</li>
+</ul>
+<h3 id="45-callbee">4.5 Настройка интеграции на стороне сервиса Callbee для каждого внутреннего номера.</h3>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p><em>Для настройки <strong>внутренних номеров</strong> через сервис <strong>CallBee</strong> нужно <strong>включить</strong> переключатель <strong>«Use B24 users table»</strong></em></p>
+</div>
+<ul>
+<li>Заходим в <strong>настройки интеграции</strong>, нажимаем <strong>«Settings»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_31.png" /></li>
+<li><strong>Включаем</strong> переключатель <strong>«Use B24 users table»</strong>
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_36.png" /></li>
+<li>После включения <strong>«Use B24 users table»</strong> появится пункт меню <strong>«Bitrix24 users»</strong>, переходим в него
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_37.png" />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_42.png" />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_43.png" />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_44.png" /></li>
+<li><strong>Go to settings (1)</strong> - Переход на страницу настроек</li>
+<li><strong>Integration Info (2)</strong> - Информация о интеграции</li>
+<li><strong>Show active users (3)</strong> - Фильтр для отображения <strong>активных</strong> пользователей</li>
+<li><strong>Save and restart (4)</strong> - <strong>Сохранение</strong> настроек и <strong>перезапуск</strong> интеграции</li>
+<li><strong>Search (5)</strong> - Поиск записей в таблице настроек</li>
+<li><strong>Active (6)</strong> - Включение <strong>настроек для пользователя (сотрудника)</strong> через сервис CallBee. <strong>Акитвация коммерческой лицензии</strong> для этого <strong>пользователя</strong> (<strong>актиных пользователей</strong> должно быть <strong>не больше количества лицензий</strong>) Если переключатель стоит в режиме <strong>off</strong> то интеграция будет <strong>игнорировать</strong> это пользователя, даже если у него прописан внутренний номер и заполнены все остальные поля. </li>
+<li><strong>Bitrix ID (7)</strong> - ID пользователя (сотрудника) <strong>в Битрикс24</strong></li>
+<li><strong>Name (8)</strong> - Имя пользователя (сотрудника) <strong>в Битрикс24</strong></li>
+<li><strong>Internal Number (9)</strong> - <strong>Внутренний номер</strong> пользователя (сотрудника)</li>
+<li><strong>External Number (10)</strong>  -  <strong>Личный номер</strong> пользователя (сотрудника) что будет совершать <strong>звонки по клику из Битрикс24</strong> на <strong>мобильном устройстве</strong>. При звонке по клику на мобильном устройстве будет осуществляться вызов <strong>в обе</strong> стороны - <strong>пользовтателю (сотруднику)</strong> и <strong>клиенту</strong> Вашей компании. Номер используется для <strong>взаимодействия</strong> приложения Битрикс24 на мобильном устройстве и <strong>осуществления вызовов</strong> звонком по клику.</li>
+<li><strong>Smart Call (11)</strong> - Включение <strong>умной маршрутизации</strong> (перевод звонка на ответственного сотрудника) с указанием <strong>времени работы</strong>. <strong>Вне графика</strong> работы умной маршрутизации звонок будет идти по маршруту <strong>по умолчанию.</strong> Чаще всего применяется для того, чтобы проиграть клиенту сообщение о том, что он дозвонился в нерабочее время.</li>
+<li><strong>B24 Time (12)</strong> - Включение <strong>графика работы</strong> для пользователя (сотрудника) <strong>из Битрикс24</strong> для умной маршрутизации</li>
+<li><strong>Add to Chat (13)</strong> - Включение <strong>отображения информации</strong> о всех звонках в <strong>чате Битрикс24</strong></li>
+<li><strong>Auto Answer (14)</strong> - Включение <strong>автоответа</strong> на <strong>SIP-телефоне</strong>, (аппаратном или программном (софтфон). При звонке по клику с использованием сервиса <strong>CallBee</strong>  первоначально звонок <strong>приходит</strong> как <strong>входящий</strong> на <strong>SIP-телефон</strong> (аппаратный или программный) и после его <strong>приема</strong> происходит <strong>исходящий вызов</strong> клиенту Вашей компании. Включение данной функции позволит <strong>SIP-телефону</strong> (аппаратному или программному) принимать звонок <strong>автоматически, без участия</strong> пользователя (сотрудника). В том случае если <strong>SIP-телефон</strong> (аппаратный или программный) <strong>поддерживает данный фуннкционал</strong> (например SIP-телефоны Yealink с актуальной прошивкой)  </li>
+<li><strong>Multiple Registration (15)</strong> - Включение функции <strong>Multiple Registration</strong> позволяет пользоваться звонком по клику при наличии <strong>нескольких SIP-телефонов</strong> (аппаратных или программных)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание!</p>
+<p><em><strong>Перед сохранением</strong> всех настроек при <strong>первом подключении</strong> интеграции необходимо <strong>в соседней вкладке</strong> вашего браузера <strong>войти в Битрикс24</strong> с <strong>правами администратора.</strong></em></p>
+</div>
+<h2 id="5-24">5. Дальнейшая настройка Битрикс24</h2>
+<h3 id="51-24">5.1 Настройка телефонии в Битрикс24</h3>
+<ul>
+<li>
+<p>В <strong>меню Битрикс24</strong> перейдите на страницу <strong>«Телефония»</strong><br />
+<img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_7.png" /></p>
+</li>
+<li>
+<p>Далее выбрать <strong>«Настройка телефонии» (1)</strong>
+  <img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_8.png" /></p>
+</li>
+<li>Настройках телефонии необходимо выбрать в пункте <strong>«Номер для исходящего
+звонка по-умолчанию (2)» -&gt; «Приложение Asterisk и Yeastar Callbee.io»</strong> </li>
+</ul>
+<p>Далее нажимаем <strong>«Сохранить»</strong></p>
+<p><img alt="settings-b24-asterisk-1" src="../../img/asterisk/asterisk_b24_10.png" /></p>
+<p><strong>Настройка интеграции завершена!</strong> </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+      
+        
+        <a href="../asterisk/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Asterisk + FreePBX" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Asterisk + FreePBX
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://callbee.io">Callbee</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>

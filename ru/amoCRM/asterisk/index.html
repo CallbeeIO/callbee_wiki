@@ -1,0 +1,885 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Callbee Wiki">
+      
+      
+      
+        <link rel="canonical" href="https://callbee.io/ru/amoCRM/asterisk/">
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Asterisk + FreePBX - Callbee Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#asterisk-freepbx-c-amocrm-callbee" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../" title="Callbee Wiki" class="md-header__button md-logo" aria-label="Callbee Wiki" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Callbee Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Asterisk + FreePBX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Выберите язык">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../" hreflang="ru" class="md-select__link">
+                    Russian
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="../../../en/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="Callbee Wiki" class="md-nav__button md-logo" aria-label="Callbee Wiki" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    Callbee Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Добро пожаловать на Callbee Wiki
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          amoCRM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="amoCRM" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          amoCRM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Asterisk + FreePBX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Asterisk + FreePBX
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Необходимые требования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сетевые настройки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asterisk-freepbx" class="md-nav__link">
+    Настройка Asterisk + FreePBX
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка Asterisk + FreePBX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ami-asterisk" class="md-nav__link">
+    Настройка AMI Asterisk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trunks-freepbx" class="md-nav__link">
+    Настройка транков (Trunks) в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inbound-routes-freepbx" class="md-nav__link">
+    Настройка Входящей маршрутизации (Inbound Routes) в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outbound-routes-freepbx" class="md-nav__link">
+    Настройка Исходящей маршрутизации (Outbound Routes) в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-freepbx" class="md-nav__link">
+    Настройка Внутренних номеров (Extensions) в FreePBX
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbee" class="md-nav__link">
+    Подключение интеграции на стороне сервиса Callbee
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amocrm" class="md-nav__link">
+    Подключение интеграции на стороне amoCRM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-chrome-google-chrome" class="md-nav__link">
+    Подключение и настройка расширения в браузере Google Chrome #google-chrome
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yeastar/" class="md-nav__link">
+        Yeastar PBX System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Bitrix24
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Bitrix24" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Bitrix24
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bitrix24/asterisk/" class="md-nav__link">
+        Asterisk + FreePBX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bitrix24/yeastar/" class="md-nav__link">
+        Yeastar PBX System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание раздела">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание раздела
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Необходимые требования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Сетевые настройки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asterisk-freepbx" class="md-nav__link">
+    Настройка Asterisk + FreePBX
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка Asterisk + FreePBX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ami-asterisk" class="md-nav__link">
+    Настройка AMI Asterisk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trunks-freepbx" class="md-nav__link">
+    Настройка транков (Trunks) в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inbound-routes-freepbx" class="md-nav__link">
+    Настройка Входящей маршрутизации (Inbound Routes) в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outbound-routes-freepbx" class="md-nav__link">
+    Настройка Исходящей маршрутизации (Outbound Routes) в FreePBX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-freepbx" class="md-nav__link">
+    Настройка Внутренних номеров (Extensions) в FreePBX
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbee" class="md-nav__link">
+    Подключение интеграции на стороне сервиса Callbee
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amocrm" class="md-nav__link">
+    Подключение интеграции на стороне amoCRM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-chrome-google-chrome" class="md-nav__link">
+    Подключение и настройка расширения в браузере Google Chrome #google-chrome
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="asterisk-freepbx-c-amocrm-callbee">Настройка интеграции Asterisk + FreePBX c amoCRM при помощи сервиса Callbee</h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><em>Для подключения интеграции необходимо поочередно выполнить пункты данного руководства в той последовательности, как они описаны.</em></p>
+</div>
+<h2 id="_1">Необходимые требования</h2>
+<p>Asterisk + FreePBX далее АТС</p>
+<ul>
+<li>Asterisk версия 13.*.* или выше</li>
+<li>FreePBX  версия 13.*.* или выше</li>
+<li>Статический IP адрес (необходимо приобрести у вашего интернет-провайдера) для прямого доступа к АТС из сети Интернет</li>
+</ul>
+<p>Интеграция осуществляется при помощи подключения облачного сервиса Callbee к АТС при помощи Asterisk Managment Interface (AMI) посредством TCP протокола. AMI принимает подключения, устанавливаемые на сетевой порт (по умолчанию - TCP порт 5038)</p>
+<h2 id="_2">Сетевые настройки</h2>
+<p>Для того чтобы сервис Callbee мог подключится к вашей АТС, у вас обязательно должен быть "<strong>белый</strong>" статический IP адрес либо доменное имя с <strong>A</strong> записью на ваш IP адрес, и проброшены через <strong>NAT</strong> к АТС следующие два порта:</p>
+<ul>
+<li>внешний порт (например 35038) на порт 5038 TCP - для доступа к АТС по AMI (Замечание по   безопасности! Рекомендуем открывать порт разрешив подключение с IP адресов указанных в <a href="/#ip">списке</a>)</li>
+<li>внешний порт (например 38080) на порт 80 TCP (стандартный порт веб - сервера АТС) - для выгрузки записей разговоров</li>
+</ul>
+<p>Интерфейс настройки проброса портов отличается в зависимости от используемого в вашей сети маршрутизатора. Актуальную инструкцию по пробросу портов под ваш маршрутизатор вы можете найти в интернете.</p>
+<h2 id="asterisk-freepbx">Настройка Asterisk + FreePBX</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>Внутренние номера (Extensions) могут быть трехзначными или четырехзначными (222 или 2222).</li>
+<li>На всех входящих маршрутах(Inbound Routes) ожидаемый входящий номер DID должен быть не менее 5 цифр, это может быть номер линии в международном формате (например: +375291111111).</li>
+<li>На всех входящих (Inbound Routes) и исходящих маршрутах (Outbound Routes) обязательно должны быть включены записи разговоров.</li>
+<li>Сервис Callbee не изменят входящий номер телефона. Входящий номер телефона будет проброшен в amoCRM том виде в каком он поступил на АТС.(Рекомендуется средствами АТС приводить все входящие номера телефонов к единому международному формату). </li>
+<li>При звонке по клику из amoCRM на АТС поступает номер телефона записанный из карточки сущности amoCRM. Необходимо чтобы АТС умела набирать этот номер (в этом формате) в линию.</li>
+<li>Для корректной работы интеграции мы рекомендуем настройки на АТС, которые не указаны в данной инструкции, оставить по умолчанию. </li>
+<li>Интеграция не гарантирует корректную работу функций при использовании модуля FreePBX <strong>Ring Groups</strong> для настройки распределения входящих вызовов в АТС. Для корректной работы всех функций интеграции рекомендуем вместо <strong>Ring Groups</strong> использовать <strong>Queues</strong></li>
+</ul>
+</div>
+<h3 id="ami-asterisk">Настройка AMI Asterisk</h3>
+<p>Для подключения к AMI Asterisk нужно создать AMI пользователя на стороне  Asterisk. Это можно сделать двумя способами:</p>
+<ul>
+<li>
+<p>Способ 1 через <strong>CLI</strong>:</p>
+<p>В файле <strong>/etc/asterisk/manager_custom.conf</strong> добавить, например:</p>
+<div class="highlight"><pre><span></span><code>[callbee] 
+secret=password
+deny=0.0.0.0/0.0.0.0 
+permit=127.0.0.1/255.255.255.0
+permit=89.108.65.246/255.255.255.255
+permit=31.24.92.54/255.255.255.255
+read=system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,message
+write=system,call,log,verbose,command,agent,user,config,command,dtmf,reporting,cdr,dialplan,originate,message
+writetimeout = 500
+</code></pre></div>
+<p>После чего выполнить команду
+<div class="highlight"><pre><span></span><code>asterisk -rx <span class="s2">&quot;manager reload&quot;</span>
+</code></pre></div>
+Конец действия</p>
+</li>
+<li>
+<p>Способ 2 через интерфейс <strong>FreePBX</strong>:</p>
+<ol>
+<li>Должен быть установлен модуль <strong>Asterisk API</strong></li>
+<li>В пункте меню <strong>Settings</strong> -&gt; <strong>Asterisk Manager Users</strong>(1) -&gt; <strong>Add Manager</strong>(2)
+<img alt="settings-asterisk-1" src="../../img/asterisk/asterisk-1.png" /></li>
+<li>Во вкладке <strong>General</strong> заполнить поля как на примере
+<img alt="settings-asterisk-2" src="../../img/asterisk/asterisk-2.png" /></li>
+<li>Во вкладке <strong>Permissions</strong> установить все переключатели в положение <strong>Yes</strong>
+<img alt="settings-asterisk-3" src="../../img/asterisk/asterisk-3.png" /></li>
+</ol>
+</li>
+</ul>
+<h3 id="trunks-freepbx">Настройка транков (Trunks) в FreePBX</h3>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<ul>
+<li>На данный момент интреграция работает только с <strong>chan_SIP</strong> транками</li>
+<li>Поле <strong>Outbound CallerID</strong></li>
+</ul>
+</div>
+<p>Пример стандартной настройки
+<img alt="settings-asterisk-4" src="../../img/asterisk/asterisk-14.png" /></p>
+<h3 id="inbound-routes-freepbx">Настройка Входящей маршрутизации (Inbound Routes) в FreePBX</h3>
+<p>Пример стандартной настройки
+<img alt="settings-asterisk-4" src="../../img/asterisk/asterisk-4.png" /></p>
+<p>Для работы умной маршрутизации необходимо успеть получить ответ от CRM на запрос наличия существующего контакта с определившимся номером телефона. Для этого необходимо выставить задержку на маршрутах
+<strong>Advanced</strong> -&gt; <strong>Pause Before Answer</strong> (например 1 сек), </p>
+<p>С ростом базы контактов в amoCRM возможно задержку необходимо увеличить на 1-2 секунды.
+<img alt="settings-asterisk-5" src="../../img/asterisk/asterisk-5.png" /></p>
+<p>Для получения записей разговоров в CRM включаем записи разговоров на маршрутах <strong>Other</strong> -&gt; <strong>Call Recording</strong> -&gt; <strong>Yes</strong>
+<img alt="settings-asterisk-6" src="../../img/asterisk/asterisk-6.png" /></p>
+<h3 id="outbound-routes-freepbx">Настройка Исходящей маршрутизации (Outbound Routes) в FreePBX</h3>
+<div class="admonition warning">
+<p class="admonition-title">Важное замечание</p>
+<p>Поле <strong>Route CID</strong> должно быть пустым</p>
+</div>
+<p>Пример стандартной настройки
+<img alt="settings-asterisk-4" src="../../img/asterisk/asterisk-12.png" /></p>
+<p>Для записи разговоров при исходящих вызовах на вкладке <strong>Additional Settings</strong> включаем записи разговоров
+<img alt="settings-asterisk-4" src="../../img/asterisk/asterisk-13.png" /></p>
+<h3 id="extensions-freepbx">Настройка Внутренних номеров (Extensions) в FreePBX</h3>
+<p>Пример настройки внутреннего номера 222:</p>
+<ul>
+<li>Есть поддержка драйвера <strong>PJSIP</strong> и <strong>CHAN_SIP</strong> для внутренних номеров</li>
+<li><strong>Outbound CID</strong> оставить по умолчанию
+<img alt="settings-asterisk-7" src="../../img/asterisk/asterisk-7.png" /></li>
+<li>настройку записей разговоров оставить по умолчанию (записи записываются на маршрутах)
+<img alt="settings-asterisk-8" src="../../img/asterisk/asterisk-8.png" /></li>
+</ul>
+<h2 id="callbee">Подключение интеграции на стороне сервиса Callbee</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>После проведения всех настроек описанных выше необходимо произвести подключение сервиса к Asterisk через AMI пользователя, которого мы создали ранее (см. Выше)</p>
+</div>
+<p>В личном кабинете сервиса Callbee для интеграции с amoCRM необходимо:</p>
+<ul>
+<li>Во вкладке <strong>Integration</strong> нажить на кнопку <strong>Install integration</strong> и выбрать вкладку <strong>AMOCRM WITH ASTERISK</strong> либо нажать кнопку <strong>Install</strong> на блоке с типом интеграции <strong>AMOCRM WITH ASTERISK</strong></li>
+<li>Заполнить все необходимые пункты для интеграции</li>
+</ul>
+<p><img alt="settings-asterisk-8" src="../../img/asterisk/asterisk-15.png" /></p>
+<ul>
+<li>В поле <strong>amoCRM Domain</strong> обязательно необходимо внести ваш домен amoCRM (например, callbee.amocrm.ru без https://)</li>
+<li><strong>amoCRM TOKEN</strong> - Токен для соединения с AmoCRM, этот токен необходимо будет вставить в соответствующее поле в виджете на стороне AmoCRM (токен должен быть из 12 символов, правее есть кнопка генерации токена – нажмите ее для создания токена). Настройка интеграции на стороне AmoCRM описана <a href="#amocrm">далее</a></li>
+<li><strong>Google Chrome TOKEN</strong> - Токен для соединения с расширением в браузере Google Chrome, этот токен необходимо будет вставить в параметрах расширения (токен должен быть из 12 символов, правее есть кнопка генерации токена – нажмите ее для создания токена). Настройка расширения описана [далее]#google-chrome</li>
+<li><strong>Asterisk AMI Host/Port/Username/Secret</strong> - Настройка подключения по AMI к ATC (IP-адрес сервера или доменное имя, порт, имя пользователя, пароль)</li>
+<li><strong>Record URL</strong> - Ссылка для записей разговоров. По данной ссылке amoCRM будет пытаться получить доступ к записи разговора, в момент попытки прослушивания записи из amoCRM. Ссылка должна быть всегда доступна.</li>
+<li><strong>Ignore lines(DID) numbers</strong> - DID номер(а) через запятую на входящим маршруте. Эта функция позволяет не реагировать на номера, не относящиеся к работе в CRM. например прямые номера бухгалтерии или администрации. Интеграция будет игнорировать эти входящие маршруты.</li>
+<li><strong>Outgoing calls (all lines)</strong> - Данная настройка позволяет выбрать какую сущность создавать при исходящем вызове НОВОМУ клиенту. <strong>Неразобранное</strong>, <strong>Контакт</strong>, <strong>Контакт + Сделка</strong></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Далее указываются настройки для линии (DID). В стандартной версии настройки применяются ко всем линиям по умолчанию. В Pro версии есть возможность устанавливать настройки для каждой линии индивидуально.</p>
+</div>
+<ul>
+<li><strong>Line (DID)</strong> - Номер подразделения отдела; номер для входящих звонков, который относится к подразделению/отделу (номер берется из настроек FreePBX поля <strong>DID Number</strong> и доступно для редактирования только в Pro версии)
+<img alt="settings-asterisk-4" src="../../img/asterisk/asterisk-16.png" /></li>
+<li><strong>Description</strong> - Описание линии (DID) будет заполнять поле <strong>Линия</strong> в карточке Контакта и Сделки в amoCRM, если оставить поле Description пустым, будет проброшен номер линии (DID) (доступно для редактирования только в Pro версии)</li>
+<li><strong>amoCRM pepline</strong> - Воронка в amoCRM. На момент создания интеграции по умолчанию выбирается основная воронка (Main), т.к. еще нет связи интеграции и amoCRM. Далее при корректном подключении интеграции при редактировании можно будет указать необходимую воронку из имеющихся #pepline</li>
+<li><strong>amoCRM user ID for missed calls</strong> - ID пользователя в amoCRM для пропущенных вызовов (ответственный пользователь за пропущенные вызовы для новых клиентов, которых нет в amoCRM). Можно устанавливать для каждой линии свое значение.</li>
+<li><strong>Smart call (by time)</strong> - Включение умной маршрутизации (перевод звонка на ответственного сотрудника) с указанием времени работы. Вне графика работы умной маршрутизации звонок будет идти по маршруту по умолчанию. Чаще всего применяется для того, чтобы проиграть клиенту сообщение о том, что он дозвонился в нерабочее время.</li>
+<li><strong>Incoming call</strong> - Настройка позволяет выбрать какую сущность создавать при входящем звонке от НОВОГО клиента <strong>Неразобранное</strong>, <strong>Контакт</strong>, <strong>Контакт + Сделка</strong></li>
+<li><strong>Unsorted during a phone call</strong> - Создание неразобранного в amoCRM в момент ответа на входящий звонок. Данная настройка сделана для удобства работы с <strong>Неразобранным</strong> при входящих звонках. Данная настройка позволяет создать неразобранное в начале звонка без записи разговора, для возможности начала работы с данной сделкой (принятие, заполнение полей). При завершении разговора в эту карточку <strong>Неразобранного</strong> или <strong>Сделки</strong> пробросится разговор. </li>
+<li><strong>Repeat sales mode</strong> - Настройка автоматической регистрации повторных сделок. Данная настройка позволяет создавать повторные сделки с существующими клиентами, если в момент входящего звонка от существующего клиента с ним нет ни одной активной сделки. При повторном обращении клиента в <strong>Сделке__в поле __Повторное обращение</strong> будет указано значение <strong>Повторное</strong>. Если данная настройка отключена, поле <strong>Повторное обращение</strong> можно скрыть. Поле заполняется для аналитики и для возможности отображение в карточке в воронке для визуального различия в новыми сделками. </li>
+<li>Нажать кнопку <strong>Save</strong> и дождаться завершения подключения</li>
+</ul>
+<h2 id="amocrm">Подключение интеграции на стороне amoCRM</h2>
+<div class="admonition warning">
+<p class="admonition-title">Внимание</p>
+<ul>
+<li>Просим обратить особое внимание - название, логотипы могут отличаться от скриншотов данного руководства</li>
+<li>Интеграция будет работать только для внутренних номеров сотрудников, которые вы указали в настойках виджета</li>
+</ul>
+</div>
+<p><img alt="settings-amocrm" src="../../img/asterisk/asterisk-9.png" /></p>
+<ul>
+<li>В настройках amoCRM, выбрать пункт <strong>Интеграции</strong>, сверху в строке поиска ищем по названию <strong>Callbee</strong>, либо в разделе <strong>Телефония</strong> найти интеграцию <strong>Callbee</strong> (<strong>Asterisk и Yeastar</strong>), согласившись с условиями нажать на кнопку <strong>Установить</strong></li>
+</ul>
+<!-- ![settings-amocrm](../img/asterisk/asterisk-10.png) -->
+<ul>
+<li>Далее необходимо прописать внутренние номера сотрудников.
+<img alt="settings-amocrm" src="../../img/asterisk/asterisk-11.png" /></li>
+<li>В поле <strong>Token</strong> Уникальный токен, необходимо скопировать из поля <strong>AMOCRM TOKEN</strong> из настроек вашей интеграции в личном кабинете на сайте Callbee</li>
+<li>Сохранить настройки.</li>
+<li>В личном кабинете сервиса <strong>Callbee</strong> после всех настроек на стороне amoCRM необходимо перезагрузить интеграцию.</li>
+<li>После перезагрузки вы можете выбрать в какие воронки будут создаваться сущности при входящем вызове #pepline</li>
+</ul>
+<h2 id="google-chrome-google-chrome">Подключение и настройка расширения в браузере Google Chrome #google-chrome</h2>
+<p>Расширение <strong>Callbee</strong> в google chrome используется для работы всех уведомлений о работе интеграции. Например, для оповещения о поступающих вызовах.</p>
+<p>Установка:</p>
+<ul>
+<li>В магазине google chrome находим расширение <strong>Callbee</strong> и устанавливаем его.</li>
+<li>Либо перейти по <a href="https://chrome.google.com/webstore/detail/callbee/belkefpbaepibinolmlpohpggbkiogco?hl=ru">ссылке</a> и установить.</li>
+</ul>
+<p>Настройка:
+<img alt="settings-google-chrome" src="../../img/asterisk/google-chrome.png" /></p>
+<ul>
+<li><strong>New version</strong> - Отметить пункт (обязательно).</li>
+<li><strong>Click on the card to open a new tab in the browser</strong> - Переход в карточку контакта по клику всплывающей карточки в новой вкладке браузера, по необходимости.</li>
+<li><strong>Extension number</strong> - Внутренний номер телефона сотрудника, на рабочем месте которого мы настраиваем данное расширение.</li>
+<li><strong>Server or token</strong> - Уникальный токен, необходимо скопировать из пункта <strong>GOOGLE CHROME EXTENSION TOKEN</strong> из настроек вашей интеграции в личном кабинете Callbee (#google-chrome)</li>
+<li>Сохраняем настройки.</li>
+</ul>
+<p>Статус расширения:</p>
+<p><img alt="google-chrome-extension-on" src="../../img/asterisk/gh-on.png" /></p>
+<p><strong>ON</strong> - отображаются оповещения, работает умная маршрутизация для конкретного сотрудника</p>
+<p><img alt="google-chrome-extension-on" src="../../img/asterisk/gh-off.png" /></p>
+<p><strong>OFF</strong> - отключены все оповещения, не работает умная маршрутизация для конкретного сотрудника</p>
+<p>На данном этапе настройка считается выполненной. </p>
+<p>При возникновении вопросов обращайтесь за помощью в службу поддержки Callbee. Контакты указаны в Личном кабинете сервиса Callbee.io</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+      
+        
+        <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Назад: Добро пожаловать на Callbee Wiki" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Добро пожаловать на Callbee Wiki
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../yeastar/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Yeastar PBX System" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              Yeastar PBX System
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 <a href="https://callbee.io">Callbee</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.config.lang": "ru", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\u041f\u043e\u0438\u0441\u043a", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version.title": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
