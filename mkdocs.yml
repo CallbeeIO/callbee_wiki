@@ -1,65 +1,39 @@
-site_name: Callbee Wiki
+site_name: сallbee wiki
 site_url: https://callbee.io
-site_description: Callbee Wiki
-copyright: Copyright &copy; 2021 <a href="https://callbee.io">Callbee</a>
-
+site_description: callbee wiki
+#copyright: Copyright &copy; 2025 <a href="https://callbee.io">сallbee</a>
 extra_css:
   - stylesheets/extra.css
-
 theme:
   name: material
   language: ru
   theme:
-  logo: img/logo.png
-  favicon: img/favicon.png
-  palette:
-    - scheme: default
-      primary: amber
-      accent: amber
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate
-      primary: deep orange
-      accent: deep orange
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-
+  logo: static/logo.png
+  favicon: static/favicon.png
+nav:
+  - О проекте: index.md
+  - Обзор интеграций: products.md
+  - Стоимость: price.md
+  - Требования к системам:
+    - Требования к CRM: requirements/crm.md
+    - Требования к АТС: requirements/pbx.md
+  - Установка:
+    - Создание личного кабинета: install/cabinet.md
+    - Подготовка CRM к интеграции: install/crm.md
+    - Подготовка АТС к интеграции: install/pbx.md
+    - Создание интеграции в личном кабинете: install/create.md
+  - Настройка:
+    - Настройка callbee в CRM: setup/crm.md
+    - Настройка PBX для работы с callbee: setup/pbx.md
+    - Обзор настроек в личном кабинете: setup/cabinet.md
+  - Кастомизация: customization.md
+  - FAQ: faq.md
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-
+  - attr_list
+  - md_in_html
 plugins:
-  - search:
-      lang:
-        - ru
-        - en
-  - i18n:
-      default_language: ru
-      languages:
-        ru: russian
-        en: english
-      material_alternate: false
-
-extra:
-  # generator: false
-  alternate:
-    - name: Russian
-      link: ./ru/
-      lang: ru
-    - name: English
-      link: ./en/
-      lang: en
-    
-nav:
-- index.ru.md
-- amoCRM:
-  - Asterisk + FreePBX: amoCRM/asterisk.ru.md
-  - Yeastar PBX System: amoCRM/yeastar.ru.md
-- Bitrix24:
-  - Asterisk + FreePBX: Bitrix24/asterisk.ru.md
-  - Yeastar PBX System: Bitrix24/yeastar.ru.md
-# - Moysklad:
-  # - Asterisk + FreePBX: moysklad/asterisk.ru.md
+  - glightbox
+  - search
