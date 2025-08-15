@@ -17,10 +17,6 @@ nav:
     - Yeastar S-серия и Bitrix24: integration/yeastar_s_bitrix24.md
 
   
-plugins:
-  - search
-  - info
-
 theme:
   name: material
   language: ru
