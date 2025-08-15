@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>http://callbee.io/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>http://callbee.io/register/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>http://callbee.io/integration/freepbx_amocrm/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>http://callbee.io/integration/freepbx_bitrix24/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>http://callbee.io/integration/yeastar_p_amocrm/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>http://callbee.io/integration/yeastar_p_bitrix24/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>http://callbee.io/integration/yeastar_s_amocrm/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+    <url>
+         <loc>http://callbee.io/integration/yeastar_s_bitrix24/</loc>
+         <lastmod>2025-08-15</lastmod>
+    </url>
+</urlset>
