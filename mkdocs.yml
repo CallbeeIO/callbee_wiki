@@ -1,39 +1,45 @@
-site_name: сallbee wiki
-site_url: https://callbee.io
-site_description: callbee wiki
-#copyright: Copyright &copy; 2025 <a href="https://callbee.io">сallbee</a>
-extra_css:
-  - stylesheets/extra.css
+site_name: Callbee Wiki-документация
+site_url: http://callbee.io
+# Структура навигации
+nav:
+  - О проекте: index.md
+  - Возможности интеграции 1C: integration/settings_1c.md
+  - Возможности интеграции amoCRM: integration/settings_amocrm.md
+  - Возможности интеграции Bitrix24: integration/settings_bitrix24.md
+
+  - Установка интеграции IP-ATC и CRM:
+    - FreePBX и 1C: integration/freepbx_1c.md
+    - FreePBX и amoCRM: integration/freepbx_amocrm.md
+    - FreePBX и Bitrix24: integration/freepbx_bitrix24.md
+    - Yeastar P-серия и amoCRM: integration/yeastar_p_amocrm.md
+    - Yeastar S-серия и amoCRM: integration/yeastar_s_amocrm.md
+    - Yeastar P-серия и Bitrix24: integration/yeastar_p_bitrix24.md
+    - Yeastar S-серия и Bitrix24: integration/yeastar_s_bitrix24.md
+
+  
+plugins:
+  - search
+  - info
+
 theme:
   name: material
   language: ru
   theme:
-  logo: static/logo.png
-  favicon: static/favicon.png
-nav:
-  - О проекте: index.md
-  - Обзор интеграций: products.md
-  - Стоимость: price.md
-  - Требования к системам:
-    - Требования к CRM: requirements/crm.md
-    - Требования к АТС: requirements/pbx.md
-  - Установка:
-    - Создание личного кабинета: install/cabinet.md
-    - Подготовка CRM к интеграции: install/crm.md
-    - Подготовка АТС к интеграции: install/pbx.md
-    - Создание интеграции в личном кабинете: install/create.md
-  - Настройка:
-    - Настройка callbee в CRM: setup/crm.md
-    - Настройка PBX для работы с callbee: setup/pbx.md
-    - Обзор настроек в личном кабинете: setup/cabinet.md
-  - Кастомизация: customization.md
-  - FAQ: faq.md
+  palette:
+    - scheme: default
+      primary: amber
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - attr_list
-  - md_in_html
-plugins:
-  - glightbox
-  - search
