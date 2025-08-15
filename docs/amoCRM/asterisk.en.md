@@ -1,3 +1,0 @@
-# Asterisk
-
-## Install Asterisk + Freepbx

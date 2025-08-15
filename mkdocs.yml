@@ -1,17 +1,30 @@
-site_name: Callbee Wiki
-site_url: https://callbee.io
-site_description: Callbee Wiki
-copyright: Copyright &copy; 2021 <a href="https://callbee.io">Callbee</a>
+site_name: Callbee Wiki-документация
+site_url: http://callbee.io
+# Структура навигации
+nav:
+  - О проекте: index.md
+  - Возможности интеграции 1C: integration/settings_1c.md
+  - Возможности интеграции amoCRM: integration/settings_amocrm.md
+  - Возможности интеграции Bitrix24: integration/settings_bitrix24.md
 
-extra_css:
-  - stylesheets/extra.css
+  - Установка интеграции IP-ATC и CRM:
+    - FreePBX и 1C: integration/freepbx_1c.md
+    - FreePBX и amoCRM: integration/freepbx_amocrm.md
+    - FreePBX и Bitrix24: integration/freepbx_bitrix24.md
+    - Yeastar P-серия и amoCRM: integration/yeastar_p_amocrm.md
+    - Yeastar S-серия и amoCRM: integration/yeastar_s_amocrm.md
+    - Yeastar P-серия и Bitrix24: integration/yeastar_p_bitrix24.md
+    - Yeastar S-серия и Bitrix24: integration/yeastar_s_bitrix24.md
+
+  
+plugins:
+  - search
+  - info
 
 theme:
   name: material
   language: ru
   theme:
-  logo: img/logo.png
-  favicon: img/favicon.png
   palette:
     - scheme: default
       primary: amber
@@ -30,36 +43,3 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-
-plugins:
-  - search:
-      lang:
-        - ru
-        - en
-  - i18n:
-      default_language: ru
-      languages:
-        ru: russian
-        en: english
-      material_alternate: false
-
-extra:
-  # generator: false
-  alternate:
-    - name: Russian
-      link: ./ru/
-      lang: ru
-    - name: English
-      link: ./en/
-      lang: en
-    
-nav:
-- index.ru.md
-- amoCRM:
-  - Asterisk + FreePBX: amoCRM/asterisk.ru.md
-  - Yeastar PBX System: amoCRM/yeastar.ru.md
-- Bitrix24:
-  - Asterisk + FreePBX: Bitrix24/asterisk.ru.md
-  - Yeastar PBX System: Bitrix24/yeastar.ru.md
-# - Moysklad:
-  # - Asterisk + FreePBX: moysklad/asterisk.ru.md
