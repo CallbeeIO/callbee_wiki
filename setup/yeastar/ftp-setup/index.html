@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.829753336531">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.829753872022">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Публикация записей разговоров через FTP (Yeastar S20) | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar</title>
     <meta name="title" content="Публикация записей разговоров через FTP (Yeastar S20) | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta name="description" content="У Yeastar S20 нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через FTP. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из /persistent/recording/monitor/ и передаёт их в CRM.">
+    <meta name="description" content="У Yeastar S20 нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через FTP. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из /ftp_media/mmc/autorecords/ и передаёт их в CRM.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://wiki.callbee.io/setup/yeastar/ftp-setup/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wiki.callbee.io/setup/yeastar/ftp-setup/">
     <meta property="og:title" content="Публикация записей разговоров через FTP (Yeastar S20) | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta property="og:description" content="У Yeastar S20 нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через FTP. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из /persistent/recording/monitor/ и передаёт их в CRM.">
+    <meta property="og:description" content="У Yeastar S20 нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через FTP. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из /ftp_media/mmc/autorecords/ и передаёт их в CRM.">
     <meta property="og:image" content="https://wiki.callbee.io/setup/img/amo-ftp-activate-s.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://wiki.callbee.io/setup/yeastar/ftp-setup/">
     <meta name="twitter:title" content="Публикация записей разговоров через FTP (Yeastar S20) | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta name="twitter:description" content="У Yeastar S20 нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через FTP. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из /persistent/recording/monitor/ и передаёт их в CRM.">
+    <meta name="twitter:description" content="У Yeastar S20 нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через FTP. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из /ftp_media/mmc/autorecords/ и передаёт их в CRM.">
     <meta name="twitter:image" content="https://wiki.callbee.io/setup/img/amo-ftp-activate-s.png">
     <meta name="twitter:image:alt" content="Публикация записей разговоров через FTP (Yeastar S20) | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
 
@@ -43,12 +43,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=4.5.3.829753336531" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.829753872022" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.829753336531" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.829753872022" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.829753336531" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.829753336531" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.829753872022" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.829753872022" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -161,7 +161,7 @@
 
                 <!-- Page content  -->
 <h1 id="публикация-записей-разговоров-через-ftp-yeastar-s20">Публикация записей разговоров через FTP (Yeastar S20)</h1>
-<p>У <strong>Yeastar S20</strong> нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через <strong>FTP</strong>. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из <code translate="no" v-pre>/persistent/recording/monitor/</code> и передаёт их в CRM.</p>
+<p>У <strong>Yeastar S20</strong> нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через <strong>FTP</strong>. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из <code translate="no" v-pre>/ftp_media/mmc/autorecords/</code> и передаёт их в CRM.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -373,7 +373,7 @@
 <p>Внутри <code translate="no" v-pre>lftp</code>:</p>
 <div id="шаг-5-проверьте-ftp-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">ls
-cd /persistent/recording/monitor
+cd /ftp_media/mmc/autorecords
 ls</code></pre>
 </doc-codeblock></div>
 <p>Вы должны увидеть структуру с папками по годам/месяцам и файлами <code translate="no" v-pre>.wav</code> — это записи разговоров.</p>
@@ -384,7 +384,7 @@ ls</code></pre>
 <li><strong>Тип входа:</strong> Обычный</li>
 <li><strong>Пользователь:</strong> <code translate="no" v-pre>support</code></li>
 <li><strong>Пароль:</strong> тот что из <doc-anchor-trigger to="#%D1%88%D0%B0%D0%B3-2-%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5-ftp-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%B8-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D0%B5-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C">Шага 2</doc-anchor-trigger></li>
-<li>Перейдите в <code translate="no" v-pre>/persistent/recording/monitor/</code> — должны быть папки с записями</li>
+<li>Перейдите в <code translate="no" v-pre>/ftp_media/mmc/autorecords/</code> — должны быть папки с записями</li>
 </ol>
 <hr>
 <h2 id="частые-проблемы">Частые проблемы</h2>
@@ -392,11 +392,11 @@ ls</code></pre>
 Проблема в passive-режиме — диапазон <code translate="no" v-pre>35000–35999</code> не проброшен на роутере. Вернитесь к <doc-anchor-trigger to="#%D1%88%D0%B0%D0%B3-4-%D0%BE%D1%82%D0%BA%D1%80%D0%BE%D0%B9%D1%82%D0%B5-%D0%BF%D0%BE%D1%80%D1%82-21-%D0%BD%D0%B0-%D1%80%D0%BE%D1%83%D1%82%D0%B5%D1%80%D0%B5">Шагу 4</doc-anchor-trigger>.</p>
 <p><strong><code translate="no" v-pre>530 Login incorrect</code></strong>
 Пароль неверный или был пересоздан через <strong>«Создать»</strong>. Снова нажмите <strong>«Создать»</strong> в настройках и используйте новый пароль.</p>
-<p><strong><code translate="no" v-pre>550 Failed to change directory</code></strong> при <code translate="no" v-pre>cd /persistent/recording/monitor</code>
+<p><strong><code translate="no" v-pre>550 Failed to change directory</code></strong> при <code translate="no" v-pre>cd /ftp_media/mmc/autorecords</code>
 Пользователь <code translate="no" v-pre>support</code> не имеет прав на папку с записями. Это бывает после обновления прошивки — зайдите по SSH и проверьте права:</p>
 <div id="частые-проблемы-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">ssh support@&lt;IP-АТС&gt;
-ls -la /persistent/recording/monitor/</code></pre>
+ls -la /ftp_media/mmc/autorecords/</code></pre>
 </doc-codeblock></div>
 <p>Если владелец не <code translate="no" v-pre>support</code> — <a href="mailto:support@callbee.io">напишите в поддержку</a>.</p>
 <p><strong>Записи есть в АТС, но Callbee их не скачивает</strong>
@@ -404,7 +404,7 @@ ls -la /persistent/recording/monitor/</code></pre>
 <ol>
 <li><strong>Протокол</strong> установлен как FTP (не SFTP)</li>
 <li><strong>Порт</strong> 21 (не 22)</li>
-<li><strong>Путь к записям</strong> <code translate="no" v-pre>/persistent/recording/monitor</code> (без слеша в конце)</li>
+<li><strong>Путь к записям</strong> <code translate="no" v-pre>/ftp_media/mmc/autorecords</code> (без слеша в конце)</li>
 </ol>
 <p><strong>FTP работает, но очень медленно</strong>
 Yeastar S20 — аппаратно слабая АТС. Если в системе много одновременных записей на скачивание — включите <a href="https://docs.yeastar.com/">ротацию записей</a> в настройках АТС или перейдите на HTTPS-публикацию через промежуточный сервер.</p>

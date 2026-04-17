@@ -1,6 +1,6 @@
 # Публикация записей разговоров через FTP (Yeastar S20)
 
-У **Yeastar S20** нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через **FTP**. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из `/persistent/recording/monitor/` и передаёт их в CRM.
+У **Yeastar S20** нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через **FTP**. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из `/ftp_media/mmc/autorecords/` и передаёт их в CRM.
 
 > [!CAUTION] Только для S20
 > На моделях **S50, S100, S300** используйте [HTTP API](/setup/yeastar/api-setup/) — он быстрее, безопаснее и не требует FTP.
@@ -91,7 +91,7 @@ lftp -u support,ВАШ_ПАРОЛЬ <IP-АТС>
 Внутри `lftp`:
 ```
 ls
-cd /persistent/recording/monitor
+cd /ftp_media/mmc/autorecords
 ls
 ```
 
@@ -103,7 +103,7 @@ ls
 3. **Тип входа:** Обычный
 4. **Пользователь:** `support`
 5. **Пароль:** тот что из [Шага 2](#шаг-2-включите-ftp-сервис-и-получите-пароль)
-6. Перейдите в `/persistent/recording/monitor/` — должны быть папки с записями
+6. Перейдите в `/ftp_media/mmc/autorecords/` — должны быть папки с записями
 
 ---
 
@@ -115,11 +115,11 @@ ls
 **`530 Login incorrect`**
 Пароль неверный или был пересоздан через **«Создать»**. Снова нажмите **«Создать»** в настройках и используйте новый пароль.
 
-**`550 Failed to change directory`** при `cd /persistent/recording/monitor`
+**`550 Failed to change directory`** при `cd /ftp_media/mmc/autorecords`
 Пользователь `support` не имеет прав на папку с записями. Это бывает после обновления прошивки — зайдите по SSH и проверьте права:
 ```bash
 ssh support@<IP-АТС>
-ls -la /persistent/recording/monitor/
+ls -la /ftp_media/mmc/autorecords/
 ```
 Если владелец не `support` — [напишите в поддержку](mailto:support@callbee.io).
 
@@ -127,7 +127,7 @@ ls -la /persistent/recording/monitor/
 Проверьте что в личном кабинете Callbee:
 1. **Протокол** установлен как FTP (не SFTP)
 2. **Порт** 21 (не 22)
-3. **Путь к записям** `/persistent/recording/monitor` (без слеша в конце)
+3. **Путь к записям** `/ftp_media/mmc/autorecords` (без слеша в конце)
 
 **FTP работает, но очень медленно**
 Yeastar S20 — аппаратно слабая АТС. Если в системе много одновременных записей на скачивание — включите [ротацию записей](https://docs.yeastar.com/) в настройках АТС или перейдите на HTTPS-публикацию через промежуточный сервер.
