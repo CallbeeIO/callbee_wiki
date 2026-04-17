@@ -1,0 +1,34 @@
+input: src
+output: .retype
+url: https://wiki.callbee.io
+
+start.pro: true
+
+gravatar:
+  default: monsterid
+  enabled: true
+
+branding:
+  title: CallBee
+  label: wiki
+
+links:
+  - text: Личный кабинет
+    link: https://my.callbee.io
+    target: blank
+  - text: callbee.io
+    link: https://callbee.io
+    target: blank
+
+meta:
+  title: " | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar"
+
+search:
+  placeholder: Поиск
+  noResultsFoundMsg: Ничего не нашли по вашему запросу
+
+snippets:
+  imageZoom: true
+
+footer:
+  copyright: "&copy; {{ year }} [CallBee](https://callbee.io/) . Все права защищены."
