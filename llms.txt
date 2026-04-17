@@ -33,8 +33,8 @@
 
 - [Установка Callbee для Yeastar S-серия](https://wiki.callbee.io/setup/yeastar/index.md): IP-АТС серии S (S20, S50, S100, S300)
 - [Настройка AMI для Yeastar S-серия](https://wiki.callbee.io/setup/yeastar/ami-setup.md): Asterisk Manager Interface (AMI) — встроенный в Yeastar S-серию служебный интерфейс, через который Callbee получает события о звонках (начало, ответ, завершение) и управляет вызовами (инициирует исходящие, переадресацию).
-- [Настройка API Yeastar](https://wiki.callbee.io/setup/yeastar/api-setup.md): API доступен на моделях S50, S100, S300. Для модели S20 используйте FTP.
-- [Настройка FTP для Yeastar S20](https://wiki.callbee.io/setup/yeastar/ftp-setup.md): Этот раздел только для модели Yeastar S20. Модели S50, S100, S300 используют API.
+- [Публикация записей разговоров через API (Yeastar S-серия)](https://wiki.callbee.io/setup/yeastar/api-setup.md): HTTP API Yeastar — интерфейс, через который Callbee забирает записи разговоров с АТС. Без API записи не попадут в карточки CRM на моделях S50/S100/S300.
+- [Публикация записей разговоров через FTP (Yeastar S20)](https://wiki.callbee.io/setup/yeastar/ftp-setup.md): У Yeastar S20 нет HTTP API — в отличие от старших моделей, записи разговоров оттуда нужно забирать через FTP. Callbee подключается к АТС по FTP (порт 21), забирает аудиофайлы из /persistent/recording/monitor/ и передаёт их в CRM.
 - [Сетевые настройки для Yeastar](https://wiki.callbee.io/setup/yeastar/network.md): Для подключения Callbee к вашей АТС необходим статический IP-адрес и проброс портов через NAT.
 - [Yeastar S-серия + Битрикс24](https://wiki.callbee.io/setup/yeastar/bitrix24.md): Убедитесь, что вы выполнили:
 - [Yeastar S-серия + amoCRM](https://wiki.callbee.io/setup/yeastar/amocrm.md): Убедитесь, что вы выполнили:
