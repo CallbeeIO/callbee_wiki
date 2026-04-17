@@ -3,7 +3,7 @@
 > Callbee — сервис интеграции офисных IP-АТС на базе Asterisk (FreePBX) и Yeastar с CRM-системами Битрикс24 и amoCRM.
 
 - [Документация Callbee](https://wiki.callbee.io/index.md): Документация Callbee
-- [Быстрый старт](https://wiki.callbee.io/quickstart/index.md): Начните работу с Callbee за 15 минут. Следуйте трём простым шагам:
+- [Быстрый старт](https://wiki.callbee.io/quickstart/index.md): Начните работу с Callbee за 20 минут. Следуйте пяти простым шагам:
 - [Установка Callbee](https://wiki.callbee.io/setup/index.md): Выберите вашу IP-АТС для перехода к инструкции:
 - [Решение проблем](https://wiki.callbee.io/troubleshooting/index.md): Здесь собраны решения для наиболее частых проблем при работе с Callbee.
 - [IP-адреса сервиса Callbee](https://wiki.callbee.io/ip-addresses.md): Для корректной работы интеграции необходимо разрешить доступ с следующих IP-адресов к вашей АТС.
@@ -13,7 +13,9 @@
 
 - [Регистрация в Callbee](https://wiki.callbee.io/quickstart/register.md): Личный кабинет Callbee — это центр управления вашими АТС, CRM-интеграциями и сервисами. Регистрация занимает около минуты.
 - [Установка приложения в CRM](https://wiki.callbee.io/quickstart/install-app.md): Выберите вашу CRM-систему:
-- [Первый звонок через CRM](https://wiki.callbee.io/quickstart/first-call.md): После установки приложения в CRM необходимо настроить подключение к вашей АТС и создать сервис в личном кабинете.
+- [Настройка АТС](https://wiki.callbee.io/quickstart/pbx-setup.md): Чтобы Callbee смог управлять звонками и получать события, нужно настроить доступ к вашей IP-АТС: открыть служебные порты, создать пользователя интеграции и опубликовать записи разговоров.
+- [Создание интеграции в личном кабинете](https://wiki.callbee.io/quickstart/create-service.md): На предыдущем шаге вы настроили АТС — открыли порт AMI и опубликовали записи разговоров. Теперь свяжите АТС с CRM через личный кабинет my.callbee.io: это и есть ваш сервис Callbee, который маршрутизирует звонки и синхронизирует данные.
+- [Первый звонок через CRM](https://wiki.callbee.io/quickstart/first-call.md): Самый волнующий момент — проверить что вся цепочка работает: клик в CRM → звонок на внутренний номер → разговор → карточка звонка с записью.
 
 ## Установка
 
@@ -21,6 +23,8 @@
 
 - [Установка Callbee для FreePBX 13+](https://wiki.callbee.io/setup/freepbx/index.md): FreePBX версии 13 и выше
 - [Настройка AMI для FreePBX](https://wiki.callbee.io/setup/freepbx/ami-setup.md): Asterisk Manager Interface (AMI) — служебный интерфейс FreePBX/Asterisk, через который Callbee получает события о звонках (начало, ответ, завершение) и управляет вызовами (инициирует исходящие, переадресацию).
+- [FreePBX + ROISTAT](https://wiki.callbee.io/setup/freepbx/roistat.md): Убедитесь, что вы выполнили:
+- [FreePBX + 1С 8.3.27+](https://wiki.callbee.io/setup/freepbx/1c.md): Убедитесь, что вы выполнили:
 - [Публикация записей разговоров](https://wiki.callbee.io/setup/freepbx/recording-publish.md): Callbee не хранит записи разговоров у себя — вместо этого CRM скачивает их напрямую с вашего сервера FreePBX по прямой HTTP(S)-ссылке. Чтобы это работало,
 - [FreePBX + Битрикс24](https://wiki.callbee.io/setup/freepbx/bitrix24.md): Убедитесь, что вы выполнили:
 - [FreePBX + amoCRM](https://wiki.callbee.io/setup/freepbx/amocrm.md): Убедитесь, что вы выполнили:
@@ -28,12 +32,18 @@
 ### Yeastar S-серия
 
 - [Установка Callbee для Yeastar S-серия](https://wiki.callbee.io/setup/yeastar/index.md): IP-АТС серии S (S20, S50, S100, S300)
-- [Настройка AMI для Yeastar S-серия](https://wiki.callbee.io/setup/yeastar/ami-setup.md): Откройте админ-панель IP-АТС
+- [Настройка AMI для Yeastar S-серия](https://wiki.callbee.io/setup/yeastar/ami-setup.md): Asterisk Manager Interface (AMI) — встроенный в Yeastar S-серию служебный интерфейс, через который Callbee получает события о звонках (начало, ответ, завершение) и управляет вызовами (инициирует исходящие, переадресацию).
 - [Настройка API Yeastar](https://wiki.callbee.io/setup/yeastar/api-setup.md): API доступен на моделях S50, S100, S300. Для модели S20 используйте FTP.
 - [Настройка FTP для Yeastar S20](https://wiki.callbee.io/setup/yeastar/ftp-setup.md): Этот раздел только для модели Yeastar S20. Модели S50, S100, S300 используют API.
 - [Сетевые настройки для Yeastar](https://wiki.callbee.io/setup/yeastar/network.md): Для подключения Callbee к вашей АТС необходим статический IP-адрес и проброс портов через NAT.
 - [Yeastar S-серия + Битрикс24](https://wiki.callbee.io/setup/yeastar/bitrix24.md): Убедитесь, что вы выполнили:
 - [Yeastar S-серия + amoCRM](https://wiki.callbee.io/setup/yeastar/amocrm.md): Убедитесь, что вы выполнили:
+
+### Yeastar P-серия
+
+- [Установка Callbee для Yeastar P-серия](https://wiki.callbee.io/setup/yeastar-p/index.md): Инструкция готовится. Мы уже тестируем интеграцию с Yeastar P-серии (P550/P560/P570) через встроенный App Center. Следите за обновлениями в Changelog.
+- [Yeastar P + Битрикс24](https://wiki.callbee.io/setup/yeastar-p/bitrix24.md): Инструкция готовится. Пока обратитесь в поддержку support@callbee.io или временно используйте общее руководство по созданию сервиса.
+- [Yeastar P + amoCRM](https://wiki.callbee.io/setup/yeastar-p/amocrm.md): Инструкция готовится. Пока обратитесь в поддержку support@callbee.io или временно используйте общее руководство по созданию сервиса.
 
 ## Решение проблем
 

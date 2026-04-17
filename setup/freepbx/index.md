@@ -15,3 +15,5 @@
 3. Подключение CRM:
    - [Битрикс24](/setup/freepbx/bitrix24/)
    - [amoCRM](/setup/freepbx/amocrm/)
+   - [1С 8.3.27+](/setup/freepbx/1c/)
+   - [ROISTAT](/setup/freepbx/roistat/)

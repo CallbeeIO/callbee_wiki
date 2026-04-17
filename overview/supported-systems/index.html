@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.829749652426">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.829752402464">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -37,11 +37,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=4.5.3.829749652426" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.5.3.829752402464" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.829749652426" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.829752402464" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.829749652426" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.829752402464" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -160,41 +160,25 @@
 <thead>
 <tr>
 <th>АТС</th>
-<th>Версия</th>
 <th>Подключение</th>
 <th>Примечания</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>FreePBX</td>
-<td>13 и выше</td>
+<td><strong>FreePBX</strong> 13+</td>
 <td>AMI (порт 5038)</td>
-<td>Требуется chan_sip</td>
+<td>Asterisk 13 и выше</td>
 </tr>
 <tr>
-<td>Yeastar S20</td>
-<td>S-серия</td>
-<td>AMI + FTP (порт 21)</td>
-<td>API отсутствует</td>
+<td><strong>Yeastar S-серия</strong> (S20/S50/S100/S300)</td>
+<td>AMI + API (8088) или FTP (21) для S20</td>
+<td>S20 — через FTP, остальные — через API</td>
 </tr>
 <tr>
-<td>Yeastar S50</td>
-<td>S-серия</td>
-<td>AMI + API (порт 8088)</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Yeastar S100</td>
-<td>S-серия</td>
-<td>AMI + API (порт 8088)</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Yeastar S300</td>
-<td>S-серия</td>
-<td>AMI + API (порт 8088)</td>
-<td>—</td>
+<td><strong>Yeastar P-серия</strong> (P550/P560/P570)</td>
+<td>App Center</td>
+<td>Требуется активная лицензия App Center</td>
 </tr>
 </tbody>
 </table>
@@ -206,19 +190,29 @@
 <tr>
 <th>CRM</th>
 <th>Тип интеграции</th>
-<th>Маркетплейс</th>
+<th>Где установить</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Битрикс24</td>
+<td><strong>Битрикс24</strong></td>
 <td>Приложение</td>
-<td>Битрикс24 Маркетплейс</td>
+<td><a href="https://www.bitrix24.ru/apps/?app=callbee.callbee">Битрикс24.Маркет</a></td>
 </tr>
 <tr>
-<td>amoCRM</td>
+<td><strong>amoCRM</strong></td>
 <td>Виджет</td>
 <td>amoМаркет</td>
+</tr>
+<tr>
+<td><strong>ROISTAT</strong></td>
+<td>Интеграция</td>
+<td>Каталог интеграций ROISTAT</td>
+</tr>
+<tr>
+<td><strong>1С</strong> 8.3.27+</td>
+<td>Расширение</td>
+<td>Маркетплейс расширений 1С</td>
 </tr>
 </tbody>
 </table>
@@ -239,7 +233,7 @@
         <div class="pr-5 ml-3 w-full">
             <h5>Общие требования для всех конфигураций</h5>
 <ul>
-<li><strong>Статический IP-адрес</strong> на сервере АТС</li>
+<li><strong>Статический IP-адрес</strong> на сервере АТС (или проброс портов на роутере)</li>
 <li>Доступ к TCP-портам АТС с <a href="../../ip-addresses/">IP-адресов сервиса Callbee</a></li>
 <li>Активная лицензия CRM-системы</li>
 <li>Личный кабинет <a href="https://my.callbee.io">my.callbee.io</a></li>
