@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.829753872022">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.829755900732">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Yeastar S-серия + amoCRM | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar</title>
     <meta name="title" content="Yeastar S-серия + amoCRM | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta name="description" content="Убедитесь, что вы выполнили:">
+    <meta name="description" content="Финальный шаг: свяжем АТС Yeastar и аккаунт amoCRM в сервисе Callbee. После этого в amoCRM начнут всплывать карточки звонков, сохраняться записи и автоматически создаваться контакты и сделки.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://wiki.callbee.io/setup/yeastar/amocrm/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wiki.callbee.io/setup/yeastar/amocrm/">
     <meta property="og:title" content="Yeastar S-серия + amoCRM | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta property="og:description" content="Убедитесь, что вы выполнили:">
+    <meta property="og:description" content="Финальный шаг: свяжем АТС Yeastar и аккаунт amoCRM в сервисе Callbee. После этого в amoCRM начнут всплывать карточки звонков, сохраняться записи и автоматически создаваться контакты и сделки.">
     <meta property="og:image" content="https://wiki.callbee.io/setup/img/create-callbee.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://wiki.callbee.io/setup/yeastar/amocrm/">
     <meta name="twitter:title" content="Yeastar S-серия + amoCRM | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta name="twitter:description" content="Убедитесь, что вы выполнили:">
+    <meta name="twitter:description" content="Финальный шаг: свяжем АТС Yeastar и аккаунт amoCRM в сервисе Callbee. После этого в amoCRM начнут всплывать карточки звонков, сохраняться записи и автоматически создаваться контакты и сделки.">
     <meta name="twitter:image" content="https://wiki.callbee.io/setup/img/create-callbee.png">
     <meta name="twitter:image:alt" content="Yeastar S-серия + amoCRM | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
 
@@ -43,11 +43,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=4.5.3.829753872022" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.829755900732" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.829753872022" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.829755900732" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.829753872022" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.829755900732" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -160,6 +160,7 @@
 
                 <!-- Page content  -->
 <h1 id="yeastar-s-серия--amocrm">Yeastar S-серия + amoCRM</h1>
+<p>Финальный шаг: свяжем АТС Yeastar и аккаунт amoCRM в <strong>сервисе Callbee</strong>. После этого в amoCRM начнут всплывать карточки звонков, сохраняться записи и автоматически создаваться контакты и сделки.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -172,17 +173,114 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Перед началом</h5>
-<p>Убедитесь, что вы выполнили:</p>
+            <h5>Предварительный чек-лист</h5>
+<p>Убедитесь что вы выполнили всё из этого списка — мастер запросит все эти данные подряд:</p>
 <ol>
-<li><a href="../ami-setup/">Настройку AMI</a></li>
-<li><a href="../api-setup/">Настройку API</a> (S50/S100/S300) или <a href="../ftp-setup/">FTP</a> (S20)</li>
-<li><a href="../network/">Сетевые настройки</a></li>
-<li><a href="../../../quickstart/install-app/">Установку виджета в amoCRM</a></li>
+<li><a href="../ami-setup/">Настройка AMI</a> — пользователь + пароль + белый список IP</li>
+<li>Публикация записей — <a href="../api-setup/">API</a> для S50/S100/S300 <strong>или</strong> <a href="../ftp-setup/">FTP</a> для S20</li>
+<li><a href="../network/">Сетевые настройки</a> — проброс портов 5038 + 8088 (или 21 + 35000–35999)</li>
+<li><a href="../../../quickstart/install-app/">Установка виджета в amoCRM</a> — виджет включён для нужных пользователей</li>
 </ol>
         </div>
     </div>
 </div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>amoCRM требует HTTPS для записей</h5>
+<p>Если используете API с HTTP, записи загрузятся в Callbee, но amoCRM <strong>не сможет их прикрепить</strong> в карточку. Для amoCRM обязательно: <strong>валидный SSL-сертификат</strong> на вашем внешнем домене АТС (Let&#x27;s Encrypt или коммерческий CA). Самоподписанные не принимаются.</p>
+        </div>
+    </div>
+</div>
+<h2 id="что-понадобится-заранее">Что понадобится заранее</h2>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th> </th>
+<th> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Адрес amoCRM</strong></td>
+<td>например <code translate="no" v-pre>mycompany.amocrm.ru</code> (без <code translate="no" v-pre>https://</code>)</td>
+</tr>
+<tr>
+<td><strong>Внешний адрес АТС</strong></td>
+<td>публичный IP или DDNS, например <code translate="no" v-pre>pbx.company.ru</code></td>
+</tr>
+<tr>
+<td><strong>AMI логин/пароль</strong></td>
+<td>из <a href="../ami-setup/">настройки AMI</a></td>
+</tr>
+<tr>
+<td><strong>API или FTP логин/пароль</strong></td>
+<td>из публикации записей</td>
+</tr>
+<tr>
+<td><strong>«Игнорируемые транки»</strong></td>
+<td>список номеров, которые не логировать</td>
+</tr>
+<tr>
+<td><strong>Регион и часовой пояс</strong></td>
+<td>для умной маршрутизации и рабочего времени</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="шаг-1-создайте-сервис-в-личном-кабинете">Шаг 1. Создайте сервис в личном кабинете</h2>
+<p>Войдите в <a href="https://my.callbee.io">my.callbee.io</a> → раздел <strong>Integrations</strong> → кнопка <strong>«Create»</strong> справа сверху.</p>
+<figure class="content-center">
+    <img src="../../img/create-callbee.png" alt="Запустите установщик" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
+    <figcaption class="caption">Запустите установщик</figcaption>
+</figure>
+<p>Откроется мастер <strong>«Create Integration»</strong> из <strong>5 шагов</strong>.</p>
+<h2 id="шаг-2-crm--pbx--выбор-системы">Шаг 2. CRM &amp; PBX — выбор системы</h2>
+<figure class="content-center">
+    <img src="../../img/amo-mycallbee-step1-s.png" alt="Шаг 1: CRM и PBX" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
+    <figcaption class="caption">Шаг 1: CRM и PBX</figcaption>
+</figure>
+<p>Заполните поля:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CRM SYSTEM</strong></td>
+<td><code translate="no" v-pre>AMOCRM</code></td>
+</tr>
+<tr>
+<td><strong>AMOCRM DOMAIN</strong></td>
+<td>адрес вашего аккаунта, например <code translate="no" v-pre>mycompany.amocrm.ru</code></td>
+</tr>
+<tr>
+<td><strong>PBX</strong></td>
+<td><code translate="no" v-pre>YEASTAR</code></td>
+</tr>
+<tr>
+<td><strong>YEASTAR</strong></td>
+<td><code translate="no" v-pre>S-Series</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Нажмите <strong>«Continue»</strong>.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -196,79 +294,304 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Дополнительные требования</h5>
+            <h5>Разные зоны amoCRM</h5>
+<p>amoCRM работает на доменах <code translate="no" v-pre>.amocrm.ru</code> (Россия), <code translate="no" v-pre>.amocrm.com</code> (международный) и <code translate="no" v-pre>.kommo.com</code> (новый бренд Kommo). Указывайте <strong>точный домен</strong> как он открывается в браузере.</p>
+        </div>
+    </div>
+</div>
+<h2 id="шаг-3-ami--подключение-к-атс">Шаг 3. AMI — подключение к АТС</h2>
+<figure class="content-center">
+    <img src="../../img/amo-mycallbee-step2-s.png" alt="Шаг 2: AMI" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
+    <figcaption class="caption">Шаг 2: AMI</figcaption>
+</figure>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AMI HOST</strong></td>
+<td>адрес АТС + порт через <code translate="no" v-pre>:</code></td>
+<td><code translate="no" v-pre>pbx.company.ru:5038</code></td>
+</tr>
+<tr>
+<td><strong>AMI USERNAME</strong></td>
+<td>логин из <a href="../ami-setup/#%D1%88%D0%B0%D0%B3-3-%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D0%B5-ami-%D0%B8-%D0%B7%D0%B0%D0%B4%D0%B0%D0%B9%D1%82%D0%B5-%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%8B%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5">Шага 3 настройки AMI</a></td>
+<td><code translate="no" v-pre>crm-to-callbee</code></td>
+</tr>
+<tr>
+<td><strong>AMI SECRET</strong></td>
+<td>пароль из той же страницы</td>
+<td><code translate="no" v-pre>••••••••••••</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Нажмите <strong>«Continue»</strong>.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Проверка AMI заранее</h5>
+<p>Перед этим шагом — сделайте <code translate="no" v-pre>nc -vz pbx.company.ru 5038</code> с компьютера в публичной сети. Если <code translate="no" v-pre>succeeded</code> — мастер пройдёт. Если нет — <a href="../network/">сетевые настройки</a>.</p>
+        </div>
+    </div>
+</div>
+<h2 id="шаг-4-yeastar--публикация-записей">Шаг 4. YEASTAR — публикация записей</h2>
+<p>Выберите свой вариант — API (новые модели) или FTP (только S20).</p>
+<doc-tabs>
+<doc-tab v-cloak id="api-s50--s100--s300">
+<template #title>API (S50 / S100 / S300)</template>
+<figure class="content-center">
+    <img src="../../img/amo-mycallbee-step3-api-s.png" alt="Шаг 3: API" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
+    <figcaption class="caption">Шаг 3: API</figcaption>
+</figure>
+<ol>
+<li>Включите переключатель <strong>«FTP / API»</strong> в положение <strong>API</strong> (синий)</li>
+</ol>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Протокол</strong> (dropdown)</td>
+<td>для amoCRM — <strong>только <code translate="no" v-pre>https://</code></strong></td>
+<td><code translate="no" v-pre>https://</code></td>
+</tr>
+<tr>
+<td><strong>API HOST</strong></td>
+<td>адрес АТС + порт 8088</td>
+<td><code translate="no" v-pre>pbx.company.ru:8088</code></td>
+</tr>
+<tr>
+<td><strong>API USERNAME</strong></td>
+<td>логин из <a href="../api-setup/">настройки API</a></td>
+<td><code translate="no" v-pre>support</code></td>
+</tr>
+<tr>
+<td><strong>API SECRET</strong></td>
+<td>пароль из той же страницы</td>
+<td><code translate="no" v-pre>••••••••••••</code></td>
+</tr>
+<tr>
+<td><strong>IGNORE TRUNKS</strong></td>
+<td>номера через пробел, которые не фиксировать</td>
+<td><code translate="no" v-pre>+37533xxxxxxx +37544xxxxxxx</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol start="2">
+<li>Нажмите <strong>«Continue»</strong></li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Только HTTPS для amoCRM</h5>
+<p>amoCRM отвергает HTTP-ссылки на записи. Если у вашей АТС нет валидного сертификата — настройте <a href="../../freepbx/recording-publish/#%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82-2-https-%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D1%83%D0%B5%D1%82%D1%81%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%B2%D1%81%D0%B5%D1%85-crm">публикацию записей через внешний Caddy</a> и указывайте его адрес здесь.</p>
+        </div>
+    </div>
+</div>
+</doc-tab>
+<doc-tab v-cloak id="ftp-только-s20">
+<template #title>FTP (только S20)</template>
+<figure class="content-center">
+    <img src="../../img/amo-mycallbee-step3-ftp-s.png" alt="Шаг 3: FTP" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
+    <figcaption class="caption">Шаг 3: FTP</figcaption>
+</figure>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>FTP + amoCRM — только через HTTPS-шлюз</h5>
+<p>Прямой FTP Yeastar S20 не подходит amoCRM — она не принимает <code translate="no" v-pre>ftp://</code> ссылки. Нужно настроить <strong>HTTPS-прокси</strong> над FTP (Caddy/nginx), который будет отдавать записи клиенту по <code translate="no" v-pre>https://</code>, а внутри скачивать их с АТС по FTP. Обратитесь в поддержку <a href="mailto:support@callbee.io">support@callbee.io</a> — поможем настроить.</p>
+        </div>
+    </div>
+</div>
+<p>Если схема с HTTPS-прокси готова, оставьте переключатель <strong>«FTP / API»</strong> в положении <strong>FTP</strong> и заполните:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FTP HOST</strong></td>
+<td>адрес АТС + порт 21</td>
+<td><code translate="no" v-pre>pbx.company.ru:21</code></td>
+</tr>
+<tr>
+<td><strong>FTP USERNAME</strong></td>
+<td>фиксированное <code translate="no" v-pre>support</code></td>
+<td><code translate="no" v-pre>support</code></td>
+</tr>
+<tr>
+<td><strong>FTP SECRET</strong></td>
+<td>пароль SSH из <a href="../ftp-setup/">настройки FTP</a></td>
+<td><code translate="no" v-pre>••••••••••••</code></td>
+</tr>
+<tr>
+<td><strong>FTP PATH</strong></td>
+<td>путь к записям на АТС</td>
+<td><code translate="no" v-pre>/ftp_media/mmc/autorecords/</code></td>
+</tr>
+<tr>
+<td><strong>IGNORE TRUNKS</strong></td>
+<td>номера через пробел</td>
+<td><code translate="no" v-pre>+37533xxxxxxx</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Нажмите <strong>«Continue»</strong>.</p>
+</doc-tab>
+</doc-tabs>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Что такое IGNORE TRUNKS</h5>
+<p>Если у вас есть <strong>служебные</strong> или <strong>тестовые</strong> транки (номер техподдержки оператора, внутренний IVR-робот, аналитический пул) — звонки с/на них не попадут в amoCRM. Формат: список номеров через пробел.</p>
+        </div>
+    </div>
+</div>
+<h2 id="шаг-5-main-line--правила-работы-со-сделками">Шаг 5. MAIN LINE — правила работы со сделками</h2>
+<figure class="content-center">
+    <img src="../../img/amo-mycallbee-step4-s.png" alt="Шаг 4: Main Line для amoCRM" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
+    <figcaption class="caption">Шаг 4: Main Line для amoCRM</figcaption>
+</figure>
+<p>Это самый <strong>концептуальный</strong> шаг — здесь решаете, <strong>как amoCRM реагирует на звонки</strong>.</p>
+<h3 id="outgoing-call-исходящие-звонки">OUTGOING CALL (исходящие звонки)</h3>
+<p>Dropdown — какую сущность создавать при звонке на незнакомый номер:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Значение</th>
+<th>Что происходит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>None</strong></td>
+<td>Ничего не создавать, только зафиксировать факт звонка</td>
+</tr>
+<tr>
+<td><strong>Unsorted</strong></td>
+<td>Создать запись в разделе <strong>«Неразобранное»</strong> для последующей обработки</td>
+</tr>
+<tr>
+<td><strong>Contact</strong> ✓ рекомендуется</td>
+<td>Сразу создать <strong>контакт</strong> в каталоге</td>
+</tr>
+<tr>
+<td><strong>Contact + Lead</strong></td>
+<td>Создать контакт <strong>и</strong> сделку</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="incoming-call-входящие-звонки">INCOMING CALL (входящие звонки)</h3>
+<p>Аналогичный dropdown для входящих звонков.</p>
+<h3 id="unsorted-during-a-phone-call">UNSORTED during a phone call</h3>
+<p>Toggle. Если включён — при <strong>входящем</strong> звонке с неизвестного номера всплывает форма <strong>«Неразобранное»</strong> прямо во время разговора. Менеджер может сразу занести данные клиента. Полезно в продажах.</p>
+<h3 id="find-in-unsorted">FIND IN UNSORTED</h3>
+<p>Toggle. Если включён — при звонке Callbee ищет контакт сначала в обычных контактах, <strong>а потом</strong> в разделе «Неразобранное». Если выключен — ищет только в обычных. Полезно если у вас много пропущенных из незнакомых номеров, которые ещё не оформлены в контакты.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Рекомендуемый старт</h5>
 <ul>
-<li>Активная лицензия amoCRM</li>
+<li><strong>Исходящие</strong>: <code translate="no" v-pre>Contact</code> — менеджер часто звонит новым, и контакт сразу должен быть в базе</li>
+<li><strong>Входящие</strong>: <code translate="no" v-pre>Unsorted</code> — чтобы не засорять каталог случайными входящими (ошибки номера, прозвон ботов)</li>
+<li><strong>UNSORTED during call</strong>: ON — ускоряет оформление клиента</li>
+<li><strong>FIND IN UNSORTED</strong>: OFF — если включили Unsorted только-что</li>
 </ul>
         </div>
     </div>
 </div>
-<h2 id="создание-сервиса-в-личном-кабинете">Создание сервиса в личном кабинете</h2>
-<ol>
-<li>Войдите в <a href="https://my.callbee.io">личный кабинет my.callbee.io</a></li>
-<li>Запустите <strong>установщик</strong> для создания сервиса
-<img src="../../img/create-callbee.png" alt="Запустите установщик" class="max-w-full h-auto" width="1024" height="768" /></li>
-</ol>
-<h3 id="шаг-1-выбор-crm-и-атс">Шаг 1. Выбор CRM и АТС</h3>
+<p>Нажмите <strong>«Continue»</strong>.</p>
+<h2 id="шаг-6-region--регион-и-часовой-пояс">Шаг 6. REGION — регион и часовой пояс</h2>
 <figure class="content-center">
-    <img src="../../img/amo-mycallbee-step1-s.png" alt="Выбор CRM и АТС" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
-    <figcaption class="caption">Выбор CRM и АТС</figcaption>
+    <img src="../../img/amo-mycallbee-step5-s.png" alt="Шаг 5: Region" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
+    <figcaption class="caption">Шаг 5: Region</figcaption>
 </figure>
-<ul>
-<li>Выберите <strong>«amoCRM»</strong> из списка CRM</li>
-<li>Введите адрес amoCRM в поле <strong>«AMOCRM DOMAIN»</strong></li>
-<li>Выберите <strong>«IP-ATC Yeastar»</strong></li>
-<li>Укажите серию АТС — <strong>«S»</strong></li>
-<li>Нажмите <strong>«Continue»</strong></li>
-</ul>
-<h3 id="шаг-2-подключение-ami">Шаг 2. Подключение AMI</h3>
-<figure class="content-center">
-    <img src="../../img/amo-mycallbee-step2-s.png" alt="Подключение AMI" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
-    <figcaption class="caption">Подключение AMI</figcaption>
-</figure>
-<ul>
-<li>Введите <strong>внешний IP-адрес</strong> АТС и порт <strong>5038</strong></li>
-<li>Укажите <strong>AMI USERNAME</strong> и <strong>AMI SECRET</strong> из <a href="../ami-setup/">настройки AMI</a></li>
-<li>Нажмите <strong>«Continue»</strong></li>
-</ul>
-<h3 id="шаг-3-подключение-api-или-ftp">Шаг 3. Подключение API или FTP</h3>
-<doc-tabs>
-<doc-tab v-cloak id="s50-s100-s300--api">
-<template #title>S50, S100, S300 — API</template>
-<figure class="content-center">
-    <img src="../../img/amo-mycallbee-step3-api-s.png" alt="Подключение API" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
-    <figcaption class="caption">Подключение API</figcaption>
-</figure>
-<ul>
-<li>Укажите внешний IP-адрес АТС в поле <strong>«API HOST»</strong> и порт <strong>8088</strong></li>
-<li>Введите <strong>API USERNAME</strong> и <strong>API SECRET</strong> из <a href="../api-setup/">настройки API</a></li>
-<li>Нажмите <strong>«Continue»</strong></li>
-</ul>
-</doc-tab>
-<doc-tab v-cloak id="s20--ftp">
-<template #title>S20 — FTP</template>
-<figure class="content-center">
-    <img src="../../img/amo-mycallbee-step3-ftp-s.png" alt="Подключение FTP" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
-    <figcaption class="caption">Подключение FTP</figcaption>
-</figure>
-<ul>
-<li>Укажите внешний IP-адрес АТС в поле <strong>«FTP HOST»</strong> и порт <strong>21</strong></li>
-<li>Введите <strong>FTP USERNAME</strong> (<code translate="no" v-pre>support</code>) и <strong>FTP SECRET</strong> из <a href="../ftp-setup/">настройки FTP</a></li>
-<li>Нажмите <strong>«Continue»</strong></li>
-</ul>
-</doc-tab>
-</doc-tabs>
-<h3 id="шаг-4-правила-создания-сущностей">Шаг 4. Правила создания сущностей</h3>
-<figure class="content-center">
-    <img src="../../img/amo-mycallbee-step4-s.png" alt="Правила создания сущностей" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1024" height="768" />
-    <figcaption class="caption">Правила создания сущностей</figcaption>
-</figure>
-<ul>
-<li>Настройте правила автоматического создания <strong>сделок</strong> или <strong>контактов</strong></li>
-<li>Определите условия создания новой сущности</li>
-<li>Нажмите <strong>«Continue»</strong></li>
-</ul>
-<h3 id="шаг-5-расположение-и-часовой-пояс">Шаг 5. Расположение и часовой пояс</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>REGION</strong></td>
+<td><code translate="no" v-pre>BY</code> (Беларусь), <code translate="no" v-pre>RU</code> (Россия), <code translate="no" v-pre>KZ</code> (Казахстан) или <code translate="no" v-pre>NL</code> (Нидерланды)</td>
+</tr>
+<tr>
+<td><strong>TIME ZONE</strong></td>
+<td>часовой пояс вашего офиса, например <code translate="no" v-pre>Europe/Minsk GMT+3:00</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -281,17 +604,68 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Важно</h5>
-<p>Эта настройка критически важна для корректной работы умной маршрутизации звонков.</p>
+            <h5>Почему это критично</h5>
+<p>Регион определяет правила парсинга номеров (код страны, формат мобильных/стационарных) и рабочее время. Ошибка — и номера в CRM появятся в неверном формате, поиск контактов по номеру работать не будет.</p>
         </div>
     </div>
 </div>
-<ul>
-<li>Выберите <strong>регион</strong>: Беларусь, Россия, Казахстан или Нидерланды</li>
-<li>Укажите <strong>часовой пояс</strong> ваших сотрудников</li>
-<li>Нажмите <strong>«Continue»</strong></li>
-</ul>
+<p>Нажмите <strong>«Create»</strong>.</p>
 <hr>
+<h2 id="после-создания-сервиса">После создания сервиса</h2>
+<p>Вы попадёте на страницу сервиса — статус должен быть <strong>Active</strong> (зелёный). Если <strong>Error</strong> — смотрите раздел ниже.</p>
+<h3 id="проверка">Проверка</h3>
+<ol>
+<li>Совершите <strong>тестовый звонок</strong> с мобильного телефона на рабочий номер</li>
+<li>В amoCRM у ответственного всплывёт <strong>уведомление</strong> о звонке</li>
+<li>В разделе <strong>Неразобранное</strong> (или в <strong>Контактах</strong>) появится новая запись</li>
+<li>После завершения — в карточке будет <strong>запись разговора</strong> (иконка play)</li>
+<li>Кликните на номер телефона в любой карточке контакта — Callbee инициирует исходящий звонок</li>
+</ol>
+<h3 id="если-что-то-не-работает">Если что-то не работает</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Проблема</th>
+<th>Куда смотреть</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Статус <strong>Error: AMI auth</strong></td>
+<td>неправильный пароль AMI — <a href="../ami-setup/">ami-setup.md</a></td>
+</tr>
+<tr>
+<td>Статус <strong>Error: connection refused</strong></td>
+<td>порт 5038 не проброшен — <a href="../network/">network.md</a></td>
+</tr>
+<tr>
+<td>Карточки всплывают, но без записей</td>
+<td>amoCRM получила HTTP-ссылку — перенастройте на HTTPS</td>
+</tr>
+<tr>
+<td>«Не удалось загрузить запись» в карточке</td>
+<td>SSL-сертификат самоподписанный или истёк — проверьте через <a href="https://www.ssllabs.com/ssltest/">SSL Labs</a></td>
+</tr>
+<tr>
+<td>Контакты создаются, но дубликаты</td>
+<td>Выключите OUTGOING CALL = Contact и используйте Unsorted с FIND IN UNSORTED = ON</td>
+</tr>
+<tr>
+<td>Звонок идёт не ответственному</td>
+<td>Виджет в amoCRM выключен у этого сотрудника — проверьте в настройках интеграций</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="что-дальше">Что дальше</h2>
+<ul>
+<li><strong>Добавьте линии</strong> — если у вас несколько городских номеров, в разделе сервиса → <strong>Lines</strong> → <strong>Add Line</strong></li>
+<li><strong>Сопоставьте пользователей</strong> Yeastar ↔ amoCRM — <a href="../../../config/users/">config/users</a></li>
+<li><strong>Настройте правила создания сделок</strong> — <a href="../../../config/lead-rules/">config/lead-rules</a></li>
+<li><strong>Настройки «Неразобранное»</strong> — в amoCRM → <strong>Настройки → Интеграции → Callbee</strong> — можно указать воронку, пайплайн, ответственного</li>
+</ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-success"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -305,7 +679,7 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Поздравляем!</h5>
-<p>Вы создали и запустили сервис Callbee для Yeastar + amoCRM.</p>
+<p>Сервис Callbee для Yeastar S + amoCRM активен. Теперь все звонки автоматически попадают в amoCRM с записями, а умная обработка входящих не пропустит ни одного потенциального клиента.</p>
         </div>
     </div>
 </div>

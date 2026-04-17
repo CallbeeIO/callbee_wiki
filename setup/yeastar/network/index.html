@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.829753872022">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.829755900732">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.5.3">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Сетевые настройки для Yeastar | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar</title>
     <meta name="title" content="Сетевые настройки для Yeastar | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta name="description" content="Для подключения Callbee к вашей АТС необходим статический IP-адрес и проброс портов через NAT.">
+    <meta name="description" content="Чтобы Callbee мог общаться с вашей АТС, сервис должен видеть АТС снаружи — подключаться к ней через интернет по служебным портам. Для этого нужен либо статический публичный IP на АТС, либо проброс портов на роутере, за которым стоит АТС.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://wiki.callbee.io/setup/yeastar/network/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wiki.callbee.io/setup/yeastar/network/">
     <meta property="og:title" content="Сетевые настройки для Yeastar | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta property="og:description" content="Для подключения Callbee к вашей АТС необходим статический IP-адрес и проброс портов через NAT.">
+    <meta property="og:description" content="Чтобы Callbee мог общаться с вашей АТС, сервис должен видеть АТС снаружи — подключаться к ней через интернет по служебным портам. Для этого нужен либо статический публичный IP на АТС, либо проброс портов на роутере, за которым стоит АТС.">
     <meta property="og:site_name" content="CallBee">
     <meta property="og:locale" content="en_US">
 
@@ -30,18 +30,20 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://wiki.callbee.io/setup/yeastar/network/">
     <meta name="twitter:title" content="Сетевые настройки для Yeastar | wiki.callbee.io - Сallbee - интеграции для IP-ATC FreePBX и Yeastar">
-    <meta name="twitter:description" content="Для подключения Callbee к вашей АТС необходим статический IP-адрес и проброс портов через NAT.">
+    <meta name="twitter:description" content="Чтобы Callbee мог общаться с вашей АТС, сервис должен видеть АТС снаружи — подключаться к ней через интернет по служебным портам. Для этого нужен либо статический публичный IP на АТС, либо проброс портов на роутере, за которым стоит АТС.">
 
     <!-- Alternate Markdown -->
     <link rel="alternate" type="text/markdown" href="https://wiki.callbee.io/setup/yeastar/network.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=4.5.3.829753872022" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.5.3.829755900732" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.829753872022" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.829755900732" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.829753872022" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.829755900732" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.5.3.829755900732" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../../resources/js/mermaid.js?v=4.5.3" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -154,7 +156,29 @@
 
                 <!-- Page content  -->
 <h1 id="сетевые-настройки-для-yeastar">Сетевые настройки для Yeastar</h1>
-<p>Для подключения Callbee к вашей АТС необходим <strong>статический IP-адрес</strong> и проброс портов через NAT.</p>
+<p>Чтобы Callbee мог общаться с вашей АТС, сервис должен <strong>видеть АТС снаружи</strong> — подключаться к ней через интернет по служебным портам. Для этого нужен либо <strong>статический публичный IP</strong> на АТС, либо <strong>проброс портов на роутере</strong>, за которым стоит АТС.</p>
+<p>Эта страница — центральная по сети. Если что-то «не подключается» — обычно ответ здесь.</p>
+<h2 id="как-работает-сетевое-взаимодействие">Как работает сетевое взаимодействие</h2>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">sequenceDiagram
+    participant Callbee as Callbee&lt;br/&gt;(185.255.77.197 и др.)
+    participant Router as Роутер&lt;br/&gt;(публичный IP)
+    participant PBX as Yeastar&lt;br/&gt;(локальный IP)
+
+    Note over Callbee,PBX: События звонков (всегда)
+    Callbee-&gt;&gt;Router: TCP 5038 AMI
+    Router-&gt;&gt;PBX: TCP 5038 AMI
+    PBX--&gt;&gt;Callbee: события call/cdr
+
+    Note over Callbee,PBX: Записи разговоров
+    alt Модели S50 / S100 / S300 — HTTP API
+        Callbee-&gt;&gt;Router: TCP 8088 API
+        Router-&gt;&gt;PBX: TCP 8088 API
+        PBX--&gt;&gt;Callbee: .wav файлы
+    else Модель S20 — FTP
+        Callbee-&gt;&gt;Router: TCP 21 FTP
+        Router-&gt;&gt;PBX: TCP 21 FTP
+        PBX--&gt;&gt;Callbee: passive 35000–35999
+    end</pre></div>
 <h2 id="необходимые-порты">Необходимые порты</h2>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -164,32 +188,41 @@
 <th>Протокол</th>
 <th>Назначение</th>
 <th>Модели</th>
+<th>Куда открыть</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>5038</strong></td>
 <td>TCP</td>
-<td>AMI (Asterisk Manager Interface)</td>
-<td>Все модели</td>
+<td>AMI (события звонков)</td>
+<td>Все</td>
+<td><a href="../../../ip-addresses/">IP Callbee</a></td>
 </tr>
 <tr>
 <td><strong>8088</strong></td>
-<td>HTTP/HTTPS</td>
-<td>API Yeastar</td>
+<td>TCP</td>
+<td>HTTP API (скачивание записей)</td>
 <td>S50, S100, S300</td>
+<td><a href="../../../ip-addresses/">IP Callbee</a></td>
 </tr>
 <tr>
 <td><strong>21</strong></td>
 <td>TCP</td>
-<td>FTP (доступ к записям)</td>
+<td>FTP (скачивание записей)</td>
 <td>Только S20</td>
+<td><a href="../../../ip-addresses/">IP Callbee</a></td>
+</tr>
+<tr>
+<td><strong>35000–35999</strong></td>
+<td>TCP</td>
+<td>FTP passive range</td>
+<td>Только S20</td>
+<td><a href="../../../ip-addresses/">IP Callbee</a></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="настройка-nat">Настройка NAT</h2>
-<p>Пробросьте указанные порты на вашем маршрутизаторе к внутреннему IP-адресу АТС Yeastar.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -202,11 +235,321 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Безопасность</h5>
-<p>Рекомендуется ограничить доступ к портам только для <a href="../../../ip-addresses/">IP-адресов сервиса Callbee</a>.</p>
+            <h5>Не открывайте всему интернету</h5>
+<p>Каждый порт открывайте <strong>только для IP-адресов Callbee</strong>. AMI и FTP — частые цели автоматических сканеров. Открытый AMI с слабым паролем — это прямой путь к фроду (исходящие звонки на премиум-номера за ваш счёт).</p>
         </div>
     </div>
 </div>
+<h2 id="варианты-размещения-атс">Варианты размещения АТС</h2>
+<doc-tabs>
+<doc-tab v-cloak id="за-роутером-с-белым-ip-типичный-случай">
+<template #title>За роутером с белым IP (типичный случай)</template>
+<p>АТС в локальной сети офиса, роутер имеет <strong>публичный статический IP</strong> от провайдера. Нужно пробросить порты (см. <doc-anchor-trigger to="#%D0%BF%D1%80%D0%BE%D0%B1%D1%80%D0%BE%D1%81-%D0%BF%D0%BE%D1%80%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D1%80%D0%BE%D1%83%D1%82%D0%B5%D1%80%D0%B5">раздел ниже</doc-anchor-trigger>).</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Проверка своего публичного IP</h5>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">curl ifconfig.me</code></pre>
+</doc-codeblock></div>
+<p>Если видимый IP <strong>не совпадает</strong> с IP роутера — провайдер даёт вам <strong>серый IP</strong> за его NAT. В этом случае проброс портов не поможет — нужен другой вариант (см. ниже).</p>
+        </div>
+    </div>
+</div>
+</doc-tab>
+<doc-tab v-cloak id="атс-с-белым-ip-напрямую-редкий-случай">
+<template #title>АТС с белым IP напрямую (редкий случай)</template>
+<p>АТС подключена к интернету напрямую без роутера. Проброс не нужен, но <strong>обязательно</strong> включите firewall внутри АТС (Settings → System → Security → Firewall Rules) и разрешите только <a href="../../../ip-addresses/">IP Callbee</a>.</p>
+</doc-tab>
+<doc-tab v-cloak id="серый-ip--мобильный-интернет">
+<template #title>Серый IP / мобильный интернет</template>
+<p>Провайдер даёт серый IP (CGNAT) — проброс невозможен. Решения:</p>
+<ol>
+<li><strong>Попросите провайдера</strong> выдать белый IP (обычно 100–300 руб./мес)</li>
+<li><strong>Поднимите VPN</strong> между АТС и VPS с белым IP (WireGuard, OpenVPN) — АТС будет видна через адрес VPS</li>
+<li><strong>Используйте reverse-tunnel</strong> (ngrok, cloudflared) — только для тестирования, нестабильно</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>VPN между АТС и Callbee не поддерживаем</h5>
+<p>Callbee не подключается к вашему VPN. Нужно поднимать VPN <strong>до роутера в нашу сторону нет</strong>, вариант только «АТС → ваш VPS с белым IP → Callbee подключается к VPS».</p>
+        </div>
+    </div>
+</div>
+</doc-tab>
+<doc-tab v-cloak id="динамический-белый-ip">
+<template #title>Динамический белый IP</template>
+<p>IP меняется при переподключении — раз в сутки/неделю. Callbee не успевает переключаться. Используйте <strong>DDNS-сервис</strong>:</p>
+<ul>
+<li><a href="https://noip.com">noip.com</a> — бесплатно, с ежемесячным подтверждением</li>
+<li><a href="https://dyndns.com">dyndns.com</a> — платно</li>
+<li><a href="https://duckdns.org">duckdns.org</a> — бесплатно, без подтверждений</li>
+<li><a href="https://cloudns.net">ClouDNS</a> — платно, с SLA</li>
+</ul>
+<p>Получаете домен вида <code translate="no" v-pre>company.ddns.net</code>, настраиваете обновление на роутере. В личном кабинете Callbee указываете домен вместо IP.</p>
+</doc-tab>
+</doc-tabs>
+<hr>
+<h2 id="проброс-портов-на-роутере">Проброс портов на роутере</h2>
+<p>Ниже — пошаговые инструкции для популярных моделей.</p>
+<doc-tabs>
+<doc-tab v-cloak id="mikrotik-routeros">
+<template #title>MikroTik (RouterOS)</template>
+<p>Через WinBox / WebFig / терминал. Через терминал:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">routeros</div>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/ip firewall nat
+add chain=dstnat protocol=tcp dst-port=5038 action=dst-nat to-addresses=&lt;LOCAL-IP-АТС&gt; to-ports=5038 src-address-list=callbee comment=&quot;Callbee AMI&quot;
+add chain=dstnat protocol=tcp dst-port=8088 action=dst-nat to-addresses=&lt;LOCAL-IP-АТС&gt; to-ports=8088 src-address-list=callbee comment=&quot;Callbee API&quot;
+
+/ip firewall address-list
+add list=callbee address=185.255.77.197
+add list=callbee address=77.105.155.20
+add list=callbee address=31.44.1.160
+add list=callbee address=178.123.180.59</code></pre>
+</doc-codeblock></div>
+<p>Для S20 добавьте также правила для порта 21 и диапазона 35000–35999.</p>
+</doc-tab>
+<doc-tab v-cloak id="keenetic">
+<template #title>Keenetic</template>
+<p>Веб-интерфейс → <strong>Переадресация</strong> → <strong>Добавить правило</strong>:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Вход</strong></td>
+<td>Интернет-соединение</td>
+</tr>
+<tr>
+<td><strong>Протокол</strong></td>
+<td>TCP</td>
+</tr>
+<tr>
+<td><strong>Порт входящего соединения</strong></td>
+<td><code translate="no" v-pre>5038</code></td>
+</tr>
+<tr>
+<td><strong>IP-адрес назначения</strong></td>
+<td>локальный IP Yeastar</td>
+</tr>
+<tr>
+<td><strong>Порт назначения</strong></td>
+<td><code translate="no" v-pre>5038</code></td>
+</tr>
+<tr>
+<td><strong>Разрешить доступ</strong></td>
+<td>По списку адресов → создать список с IP Callbee</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Повторите для портов 8088 (S50/S100/S300) или 21 + 35000–35999 (S20).</p>
+</doc-tab>
+<doc-tab v-cloak id="pfsense--opnsense">
+<template #title>pfSense / OPNsense</template>
+<p><strong>Firewall → NAT → Port Forward → Add</strong>:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Interface</strong></td>
+<td>WAN</td>
+</tr>
+<tr>
+<td><strong>Protocol</strong></td>
+<td>TCP</td>
+</tr>
+<tr>
+<td><strong>Destination</strong></td>
+<td>WAN address</td>
+</tr>
+<tr>
+<td><strong>Destination port range</strong></td>
+<td><code translate="no" v-pre>5038</code> – <code translate="no" v-pre>5038</code></td>
+</tr>
+<tr>
+<td><strong>Redirect target IP</strong></td>
+<td>локальный IP Yeastar</td>
+</tr>
+<tr>
+<td><strong>Redirect target port</strong></td>
+<td><code translate="no" v-pre>5038</code></td>
+</tr>
+<tr>
+<td><strong>Source</strong></td>
+<td>Alias <code translate="no" v-pre>CallbeeNetworks</code> с IP-адресами Callbee</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Создайте alias <code translate="no" v-pre>CallbeeNetworks</code> в <strong>Firewall → Aliases</strong> со всеми 4 IP.</p>
+</doc-tab>
+<doc-tab v-cloak id="ubiquiti-edgerouter--unifi">
+<template #title>Ubiquiti EdgeRouter / UniFi</template>
+<p><strong>UniFi Network → Settings → Firewall &amp; Security → Port Forwarding → Create</strong>:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Поле</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td><code translate="no" v-pre>Callbee AMI</code></td>
+</tr>
+<tr>
+<td><strong>Forward Rule</strong></td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><strong>Interface</strong></td>
+<td>WAN</td>
+</tr>
+<tr>
+<td><strong>From</strong></td>
+<td>Limited → <code translate="no" v-pre>185.255.77.197/32</code> и другие IP Callbee</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td><code translate="no" v-pre>5038</code></td>
+</tr>
+<tr>
+<td><strong>Forward IP</strong></td>
+<td>локальный IP Yeastar</td>
+</tr>
+<tr>
+<td><strong>Forward Port</strong></td>
+<td><code translate="no" v-pre>5038</code></td>
+</tr>
+<tr>
+<td><strong>Protocol</strong></td>
+<td>TCP</td>
+</tr>
+</tbody>
+</table>
+</div>
+</doc-tab>
+<doc-tab v-cloak id="tp-link--asus--d-link-домашние-роутеры">
+<template #title>TP-Link / ASUS / D-Link (домашние роутеры)</template>
+<p>В большинстве домашних роутеров раздел называется <strong>Virtual Server</strong> или <strong>Port Forwarding</strong>:</p>
+<ol>
+<li><strong>Service Port (External)</strong>: <code translate="no" v-pre>5038</code></li>
+<li><strong>Internal IP</strong>: локальный IP Yeastar</li>
+<li><strong>Internal Port</strong>: <code translate="no" v-pre>5038</code></li>
+<li><strong>Protocol</strong>: TCP</li>
+<li><strong>Enable</strong>: галочка</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Source IP часто недоступен</h5>
+<p>Домашние роутеры <strong>не позволяют ограничить источник</strong> — порт откроется для всего интернета. В этом случае обязательно включите <strong>firewall внутри Yeastar</strong> (<code translate="no" v-pre>Settings → System → Security → Firewall Rules</code>) и разрешите только <a href="../../../ip-addresses/">IP Callbee</a> на уровне АТС.</p>
+        </div>
+    </div>
+</div>
+</doc-tab>
+</doc-tabs>
+<hr>
+<h2 id="проверка-снаружи">Проверка снаружи</h2>
+<p>После проброса проверьте что порты доступны из интернета.</p>
+<h3 id="с-локального-компьютера-в-другой-сети">С локального компьютера (в другой сети)</h3>
+<p>Подключитесь к мобильному интернету или выйдите из офисной сети. Выполните:</p>
+<div id="с-локального-компьютера-в-другой-сети-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">nc -vz &lt;ПУБЛИЧНЫЙ-IP-ИЛИ-DDNS&gt; 5038</code></pre>
+</doc-codeblock></div>
+<p>Ожидаемый ответ: <code translate="no" v-pre>Connection to &lt;IP&gt; 5038 port [tcp/*] succeeded!</code></p>
+<p>Повторите для 8088 (или 21 для S20).</p>
+<h3 id="через-онлайн-сервисы">Через онлайн-сервисы</h3>
+<p>Если нет доступа к внешнему соединению:</p>
+<ul>
+<li><a href="https://portchecker.co">portchecker.co</a> — проверяет один порт</li>
+<li><a href="https://canyouseeme.org">canyouseeme.org</a> — проверяет один порт с логами</li>
+<li><a href="https://ping.eu/port-chk/">ping.eu/port-chk</a> — проверка нескольких портов</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Ограничение сервисов проверки</h5>
+<p>Онлайн-чекеры работают с собственных IP. Если вы <strong>ограничили источник</strong> только IP Callbee, сервисы получат отказ — это нормально. Для такой проверки временно снимите whitelist, проверьте, верните обратно.</p>
+        </div>
+    </div>
+</div>
+<hr>
+<h2 id="безопасность--обязательный-минимум">Безопасность — обязательный минимум</h2>
+<ol>
+<li><strong>Whitelist по IP</strong> на роутере — только <a href="../../../ip-addresses/">IP Callbee</a></li>
+<li><strong>Стандартные пароли</strong> <code translate="no" v-pre>admin</code>/<code translate="no" v-pre>admin</code>, <code translate="no" v-pre>cdr</code>/<code translate="no" v-pre>cdr</code>, <code translate="no" v-pre>support</code>/<code translate="no" v-pre>support</code> — <strong>смените немедленно</strong></li>
+<li><strong>SIP-порт 5060</strong> — закройте если нет SIP-провайдеров снаружи (fraud-боты сканируют именно его)</li>
+<li><strong>Fail2ban внутри АТС</strong> (<code translate="no" v-pre>Settings → System → Security → Auto Defense</code>) — блокирует IP после N неудачных попыток</li>
+<li><strong>Уведомления о безопасности</strong> — включите email-оповещения при сбросе правил</li>
+<li><strong>Резервная копия конфига</strong> — перед настройкой сделайте бэкап (Maintenance → Backup)</li>
+</ol>
+<hr>
+<h2 id="частые-проблемы">Частые проблемы</h2>
+<p><strong><code translate="no" v-pre>nc</code> снаружи даёт <code translate="no" v-pre>Connection refused</code></strong>
+Порт не проброшен или service на АТС не включён. Зайдите на АТС из локальной сети — если там <code translate="no" v-pre>nc localhost 5038</code> работает, проблема в роутере.</p>
+<p><strong><code translate="no" v-pre>nc</code> снаружи даёт <code translate="no" v-pre>timeout</code></strong>
+Firewall роутера или провайдера блокирует пакет. Проверьте что правило в NAT — <strong>перед</strong> блокирующим правилом (порядок правил в iptables/MikroTik важен).</p>
+<p><strong>Провайдер блокирует порт</strong>
+Некоторые провайдеры (особенно мобильные) блокируют порты 21, 25, 80, 135, 445. Если порт 5038 закрыт провайдером — перенастройте AMI на <strong>нестандартный порт</strong> в Yeastar и пробросьте его.</p>
+<p><strong>IP Callbee изменился — whitelist устарел</strong>
+Проверьте актуальный список на странице <a href="../../../ip-addresses/">IP-адреса сервиса</a>. Мы анонсируем изменения в <a href="../../../changelog/">Changelog</a> за 30 дней.</p>
+<p><strong>После обновления прошивки правила firewall сбросились</strong>
+Yeastar при обновлении прошивки иногда восстанавливает defaults. <strong>Перед обновлением</strong> сохраните backup (Maintenance → Backup), <strong>после обновления</strong> проверьте правила.</p>
+<p><strong>DDNS обновился, Callbee не подхватил</strong>
+Callbee обновляет IP домена каждые 5 минут. Если больше 15 минут — откройте сервис в <a href="https://my.callbee.io">личном кабинете</a> и нажмите <strong>«Обновить подключение»</strong>.</p>
 <hr>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-success"></div>
@@ -220,8 +563,8 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Готово!</h5>
-<p>Сеть настроена. Переходите к подключению CRM:</p>
+            <h5>Сеть настроена!</h5>
+<p>Переходите к подключению CRM:</p>
 <ul>
 <li><a href="../bitrix24/">Битрикс24</a></li>
 <li><a href="../amocrm/">amoCRM</a></li>
@@ -295,6 +638,6 @@
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Сетевые настройки", level: 3, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/setup/yeastar/network.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Сетевые настройки", level: 3, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: true, hasMath: false, tocDepth: 23, "md": "/setup/yeastar/network.md" }</script>
 </body>
 </html>
