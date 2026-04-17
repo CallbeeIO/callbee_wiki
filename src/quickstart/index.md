@@ -6,13 +6,17 @@ order: 99
 
 # Быстрый старт
 
-Начните работу с Callbee за 15 минут. Следуйте трём простым шагам:
+Начните работу с Callbee за 20 минут. Следуйте пяти простым шагам:
 
 +++ 1. Регистрация
 [!ref](/quickstart/register/)
 +++ 2. Установка приложения в CRM
 [!ref](/quickstart/install-app/)
-+++ 3. Первый звонок
++++ 3. Настройка АТС
+[!ref](/quickstart/pbx-setup/)
++++ 4. Создание интеграции
+[!ref](/quickstart/create-service/)
++++ 5. Первый звонок
 [!ref](/quickstart/first-call/)
 +++
 

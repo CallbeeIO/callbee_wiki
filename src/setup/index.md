@@ -15,6 +15,9 @@ expanded: true
 ||| Yeastar S-серия
 [!ref](/setup/yeastar/)
 IP-АТС Yeastar S20, S50, S100, S300. Подключение через AMI + API/FTP.
+||| Yeastar P-серия
+[!ref](/setup/yeastar-p/)
+IP-АТС Yeastar P550, P560, P570. Подключение через App Center.
 |||
 
 > [!CAUTION] Важно

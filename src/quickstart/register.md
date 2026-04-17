@@ -1,7 +1,7 @@
 ---
 label: 1. Регистрация
 icon: person-add
-order: 3
+order: 5
 ---
 
 # Регистрация в Callbee
