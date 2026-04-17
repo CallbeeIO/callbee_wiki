@@ -1,16 +1,26 @@
-name: ci
+name: Deploy Retype to GitHub Pages
+
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+
+      - uses: retypeapp/action-build@latest
+        env:
+          RETYPE_LICENSE_KEY: ${{ secrets.RETYPE_LICENSE_KEY }}
+
+      - uses: retypeapp/action-github-pages@latest
         with:
-          python-version: 3.9
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-static-i18n
-      - run: mkdocs gh-deploy --force
+          update-branch: true
+          branch: gh-pages
+          cname: wiki.callbee.io
