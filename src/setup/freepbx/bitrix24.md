@@ -1,7 +1,7 @@
 ---
 label: Подключение Битрикс24
 icon: link
-order: 1
+order: 20
 tags: [bitrix24, freepbx]
 ---
 

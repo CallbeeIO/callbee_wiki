@@ -1,7 +1,7 @@
 ---
 label: Подключение Битрикс24
 icon: link
-order: 1
+order: 30
 tags: [bitrix24, yeastar]
 ---
 

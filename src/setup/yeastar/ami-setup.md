@@ -1,7 +1,7 @@
 ---
 label: Настройка AMI
 icon: terminal
-order: 5
+order: 100
 ---
 
 # Настройка AMI для Yeastar S-серия

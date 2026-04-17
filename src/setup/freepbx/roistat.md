@@ -1,7 +1,7 @@
 ---
 label: Подключение ROISTAT
 icon: link
-order: 3
+order: 10
 tags: [roistat, freepbx]
 ---
 

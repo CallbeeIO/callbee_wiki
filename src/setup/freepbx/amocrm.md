@@ -1,7 +1,7 @@
 ---
 label: Подключение amoCRM
 icon: link
-order: 0
+order: 30
 tags: [amocrm, freepbx]
 ---
 

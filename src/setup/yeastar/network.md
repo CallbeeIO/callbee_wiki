@@ -1,7 +1,7 @@
 ---
 label: Сетевые настройки
 icon: globe
-order: 2
+order: 20
 ---
 
 # Сетевые настройки для Yeastar

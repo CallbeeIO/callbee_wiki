@@ -1,7 +1,7 @@
 ---
 label: Публикация записей (API)
 icon: plug
-order: 4
+order: 90
 tags: [yeastar, api]
 ---
 

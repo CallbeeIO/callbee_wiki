@@ -1,7 +1,7 @@
 ---
 label: Настройка AMI
 icon: terminal
-order: 3
+order: 100
 ---
 
 # Настройка AMI для FreePBX

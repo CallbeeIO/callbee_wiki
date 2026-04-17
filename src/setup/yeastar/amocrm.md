@@ -1,7 +1,7 @@
 ---
 label: Подключение amoCRM
 icon: link
-order: 0
+order: 40
 tags: [amocrm, yeastar]
 ---
 

@@ -1,7 +1,7 @@
 ---
 label: Публикация записей (FTP)
 icon: file-directory
-order: 3
+order: 80
 tags: [yeastar, s20, ftp]
 ---
 
